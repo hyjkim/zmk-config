@@ -94,12 +94,12 @@
 
         right_command {
             bindings = <&kp RIGHT_COMMAND>;
-            key-positions = <>;
+            key-positions = <19 20>;
         };
 
         right_alt {
             bindings = <&kp RIGHT_ALT>;
-            key-positions = <>;
+            key-positions = <19 21>;
         };
     };
 };
