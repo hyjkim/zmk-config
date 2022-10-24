@@ -37,7 +37,7 @@
   &none    &trans    &trans  &trans      &trans  &kp KP_MULTIPLY      &kp PLUS  &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9      &to 3   &none
   &none    &kp N6    &kp N7  &kp N8      &kp N9    &kp KP_DIVIDE     &kp MINUS  &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &kp ENTER   &none
   &none  &kp LEFT  &kp DOWN  &kp UP  &kp PERIOD     &kp KP_EQUAL  &kp NUMBER_0  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3     &trans   &none
-                             &trans      &trans           &trans         &to 0        &trans        &trans
+                             &trans      &trans           &trans         &trans        &to 0       &trans
             >;
         };
 
@@ -52,7 +52,7 @@
   &none   &kp EXCL     &kp AT          &kp HASH           &kp DLLR      &kp PRCNT  &kp CARET              &kp AMPS        &kp KP_MULTIPLY          &kp LPAR   &kp RPAR   &none
   &none  &kp TILDE  &kp GRAVE  &kp LEFT_BRACKET  &kp RIGHT_BRACKET      &kp COLON  &kp MINUS  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp SINGLE_QUOTE  &kp ENTER   &none
   &none    &kp TAB  &kp EQUAL    &kp LEFT_BRACE    &kp RIGHT_BRACE  &kp SEMICOLON   &kp PLUS             &kp UNDER                 &trans            &trans     &trans   &none
-                                         &trans             &trans         &trans      &to 0                &trans                 &trans
+                             &trans      &trans           &trans         &trans        &to 0       &trans
             >;
         };
 
@@ -61,7 +61,7 @@
  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-                         &trans  &trans  &trans   &to 0  &trans  &trans
+                             &trans      &trans           &trans         &trans        &to 0       &trans
             >;
         };
     };
