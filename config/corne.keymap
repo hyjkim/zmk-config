@@ -30,7 +30,7 @@
 // from https://github.com/urob/zmk-config/blob/main/config/base.keymap 
         ss_cw: ss_cw {
             compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>
+            #binding-cells = <0>;
             label = "ss_cw";
             bindings = <&sk LSHFT>, <&caps_word>;
             mods = <(MOD_LSFT)>;
