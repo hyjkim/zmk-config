@@ -34,7 +34,7 @@
             label = "ss_cw";
             bindings = <&sk LSHFT>, <&caps_word>;
             mods = <(MOD_LSFT)>;
-        }
+        };
     };
 
     keymap {
