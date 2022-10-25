@@ -47,6 +47,39 @@
     };
     };
 
+    macros {
+        m_copy: m_copy {
+            label = "copy";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_press &kp LEFT_COMMAND>
+                , <&macro_tap &kp C>
+                , <&macro_release &kp LEFT_COMMAND>
+                ;
+        };
+        m_cut: m_cut {
+            label = "cut";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_press &kp LEFT_COMMAND>
+                , <&macro_tap &kp X>
+                , <&macro_release &kp LEFT_COMMAND>
+                ;
+        };
+        m_paste: m_paste {
+            label = "paste";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_press &kp LEFT_COMMAND>
+                , <&macro_tap &kp V>
+                , <&macro_release &kp LEFT_COMMAND>
+                ;
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
@@ -97,9 +130,9 @@
 
         nav {
             bindings = <
- &none   &none  &none  &none  &none  &none  &mt LEFT_COMMAND C &mt LEFT_COMMAND X     &none    &kp DEL            &mt LEFT_COMMAND V  &none
- &none   &none  &none  &none  &none  &none   &kp LEFT_ARROW  &kp DOWN_ARROW  &kp UP_ARROW  &kp RIGHT_ARROW  &none  &none
- &none  &kp TAB  &none  &none  &none  &none  &none          &none          &none        &none           &none  &none
+ &none   &none  &none  &none  &none  &none  &m_copy &m_cut  &none    &kp DEL            &m_paste  &none
+ &none   &none  &none  &none  &none  &none   &kp LEFT_ARROW  &kp DOWN_ARROW  &kp UP_ARROW  &kp RIGHT_ARROW  &trans &none
+ &none  &kp TAB  &none  &none  &none  &none  &none          &none          &none        &none           &trans  &none
                           MO_TOG(1)   MO_TOG(2)  &ss_cw &sk LCTRL  &to 0    MO_TOG(3)
             >;
         };
