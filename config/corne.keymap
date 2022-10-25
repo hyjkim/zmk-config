@@ -73,10 +73,10 @@
             //                    |  |     |  |   |  |     |  |
 
             bindings = <
-  &none  &kp C_VOLUME_DOWN   &kp C_VOLUME_UP  &kp C_BRI_DN  &kp C_BRI_UP  &kp KP_MULTIPLY      &kp PLUS  &ht NUMBER_7 F7 &ht NUMBER_8 F8 &ht NUMBER_9 F9     &none   &none
-  &none         &bt BT_CLR      &bt BT_SEL 0    &bt BT_PRV    &bt BT_NXT    &kp KP_DIVIDE     &kp MINUS  &ht NUMBER_4 F4  &ht NUMBER_5 F5 &ht NUMBER_6 F6 &kp ENTER   &none
-  &none            &kp TAB  &kp C_PLAY_PAUSE    &kp C_NEXT    &kp PERIOD     &kp KP_EQUAL  &kp NUMBER_0  &ht NUMBER_1 F1  &ht NUMBER_2 F2  &ht NUMBER_3 F3    &trans   &none
-                                                    &trans        &trans           &trans        &trans         &to 0        &trans
+  &none  &kp C_VOLUME_DOWN   &kp C_VOLUME_UP  &kp C_BRI_DN  &kp C_BRI_UP  &kp KP_MULTIPLY      &kp PLUS  &ht F7 NUMBER_7 &ht F8 NUMBER_8 &ht F9 NUMBER_9     &none   &none
+  &none         &bt BT_CLR      &bt BT_SEL 0    &bt BT_PRV    &bt BT_NXT    &kp KP_DIVIDE     &kp MINUS  &ht F4 NUMBER_4  &ht F5 NUMBER_5  &ht F6 NUMBER_6  &kp ENTER   &none
+  &none            &kp TAB  &kp C_PLAY_PAUSE    &kp C_NEXT    &kp PERIOD     &kp KP_EQUAL  &kp NUMBER_0  &ht F1 NUMBER_1  &ht F2 NUMBER_2  &ht F3 NUMBER_3    &trans   &none
+                          MO_TOG(1)   MO_TOG(2)  &ss_cw &sk LCTRL  &to 0    MO_TOG(3)
             >;
         };
 
@@ -91,7 +91,7 @@
   &none   &kp EXCL     &kp AT          &kp HASH           &kp DLLR      &kp PRCNT  &kp CARET              &kp AMPS        &kp KP_MULTIPLY         &kp SLASH  &kp BACKSLASH   &none
   &none  &kp TILDE  &kp GRAVE  &kp LEFT_BRACKET  &kp RIGHT_BRACKET      &kp COLON  &kp MINUS  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp SINGLE_QUOTE      &kp ENTER   &none
   &none    &kp TAB  &kp EQUAL    &kp LEFT_BRACE    &kp RIGHT_BRACE  &kp SEMICOLON   &kp PLUS             &kp UNDER                 &trans            &trans         &trans   &none
-                                         &trans             &trans         &trans     &trans                 &to 0                 &trans
+                          MO_TOG(1)   MO_TOG(2)  &ss_cw &sk LCTRL  &to 0    MO_TOG(3)
             >;
         };
 
@@ -100,7 +100,7 @@
  &none   &none  &none  &none  &none  &none  &mt LEFT_COMMAND C &mt LEFT_COMMAND X     &none    &kp DEL            &mt LEFT_COMMAND V  &none
  &none   &none  &none  &none  &none  &none   &kp LEFT_ARROW  &kp DOWN_ARROW  &kp UP_ARROW  &kp RIGHT_ARROW  &none  &none
  &none  &kp TAB  &none  &none  &none  &none  &none          &none          &none        &none           &none  &none
-                          &trans  &trans  &trans  &trans           &to 0          &trans
+                          MO_TOG(1)   MO_TOG(2)  &ss_cw &sk LCTRL  &to 0    MO_TOG(3)
             >;
         };
     };
