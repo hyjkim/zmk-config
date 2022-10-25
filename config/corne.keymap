@@ -90,7 +90,7 @@
  &none   &none  &none  &none  &none  &none  &mt LEFT_COMMAND C &mt LEFT_COMMAND X     &none    &kp DEL            &mt LEFT_COMMAND V  &none
  &none   &none  &none  &none  &none  &none   &kp LEFT_ARROW  &kp DOWN_ARROW  &kp UP_ARROW  &kp RIGHT_ARROW  &none  &none
  &none  &kp TAB  &none  &none  &none  &none  &none          &none          &none        &none           &none  &none
-                          &none  &none  &none  &none           &to 0          &none
+                          &trans  &trans  &trans  &trans           &to 0          &trans
             >;
         };
     };
