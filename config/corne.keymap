@@ -10,18 +10,6 @@
 
 #define MO_TOG(layer) &mo_tog layer layer   // Macro to apply momentary-layer-on-hold/toggle-layer-on-tap to a specific layer
 
-// tap: sticky shift | double tap: capsword | triple tap: cancel capsword
-// ZMK_BEHAVIOR(ss_cw, tap_dance,
-//     tapping-term-ms = <200>;
-//     bindings = <&sk LSHFT>, <&caps_word>, <CANCEL>;
-// )
-// tap: sticky-shift | lshft + tap: caps-word | hold: shift
-// from https://github.com/urob/zmk-config/blob/main/config/base.keymap 
-ZMK_BEHAVIOR(ss_cw, mod_morph,
-    bindings = <&sk LSHFT>, <&caps_word>;
-        mods = <(MOD_LSFT)>;
-        )
-
 / {
     behaviors {
         mo_tog: behavior_mo_tog {
@@ -32,6 +20,18 @@ ZMK_BEHAVIOR(ss_cw, mod_morph,
             tapping-term-ms = <200>;
             bindings = <&mo>, <&tog>;
         };
+
+        // tap: sticky shift | double tap: capsword | triple tap: cancel capsword
+        // ZMK_BEHAVIOR(ss_cw, tap_dance,
+        //     tapping-term-ms = <200>;
+        //     bindings = <&sk LSHFT>, <&caps_word>, <CANCEL>;
+        // )
+        // tap: sticky-shift | lshft + tap: caps-word | hold: shift
+        // from https://github.com/urob/zmk-config/blob/main/config/base.keymap 
+        ZMK_BEHAVIOR(ss_cw, mod_morph,
+            bindings = <&sk LSHFT>, <&caps_word>;
+                    mods = <(MOD_LSFT)>;
+                            )
     };
 
     keymap {
