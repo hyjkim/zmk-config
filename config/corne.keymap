@@ -46,15 +46,6 @@
         bindings = <&kp>, <&kp>;
     };
 
-    // Issues meh macro on hold, but space on tap.
-    sp_meh: sp_meh {
-        compatible = "zmk,behavior-hold-tap";
-        label = "SPACE_MEH";
-        #binding-cells = <2>;
-        tapping-term-ms = <200>;
-        quick_tap_ms = <150>;
-        bindings = <&kp>, <&m_meh>;
-    };
     };
 
     macros {
@@ -88,16 +79,7 @@
                 , <&macro_release &kp LEFT_COMMAND>
                 ;
         };
-        m_meh: m_meh {
-            label = "meh";
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings
-                = <&macro_press &kp LSHFT &kp LALT &kp LGUI>
-                , <&macro_pause_for_release>
-                , <&macro_release &kp LSHFT &kp LALT &kp LGUI>
-                ;
-        };
+
     };
 
     keymap {
@@ -115,7 +97,7 @@
   &none   &kp A   &kp S   &kp D   &kp F      &kp G      &kp H      &kp J      &kp K    &kp L   &kp SQT   &none
   &none   &kp Z   &kp X   &kp C   &kp V      &kp B      &kp N      &kp M  &kp COMMA  &kp DOT  &kp BSPC   &none
                           //MO_TO(1)   MO_TO(2)  &ss_cw &sk LCTRL  &sp_meh    MO_TO(3)
-                          MO_TO(1)   MO_TO(2)  &ss_cw &sk LCTRL  &sp_meh SPACE    MO_TO(3)
+                          MO_TO(1)   MO_TO(2)  &ss_cw &sk LCTRL  &mt LC(LS(LALT)) SPACE    MO_TO(3)
             >;
         };
 
@@ -151,7 +133,7 @@
 
         nav {
             bindings = <
- &none   &none  &none  &none  &none  &none  &m_copy &m_cut  &none    &kp DEL            &m_paste  &none
+ &none   &none  &none  &none  &none  &none  &kp LG(C) &m_cut  &none    &kp DEL            &m_paste  &none
  &none   &none  &none  &none  &none  &none   &kp LEFT_ARROW  &kp DOWN_ARROW  &kp UP_ARROW  &kp RIGHT_ARROW  &trans &none
  &none  &kp TAB  &none  &none  &none  &none  &none          &none          &none        &none           &trans  &none
                           MO_TO(1)   MO_TO(2)  &ss_cw &sk LCTRL  &to 0    MO_TO(3)
