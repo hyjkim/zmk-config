@@ -47,7 +47,6 @@
     };
 
     // Issues meh macro on hold, but space on tap.
-    /*
     sp_meh: sp_meh {
         compatible = "zmk,behavior-hold-tap";
         label = "SPACE_MEH";
@@ -56,7 +55,6 @@
         quick_tap_ms = <150>;
         bindings = <&kp SPACE>, <&m_meh>;
     };
-    */
     };
 
     macros {
