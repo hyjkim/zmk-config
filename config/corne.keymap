@@ -10,6 +10,11 @@
 
 #define MO_TO(layer) &mo_to layer layer   // Macro to apply momentary-layer-on-hold/to-layer-on-tap to a specific layer
 
+&mt {
+      flavor = "tap-preferred";
+ //       tapping-term-ms = <1000>; 
+};
+
 / {
     behaviors {
         mo_to: behavior_mo_to {
@@ -47,39 +52,6 @@
     };
 
     };
-
-    macros {
-        m_copy: m_copy {
-            label = "copy";
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings
-                = <&macro_press &kp LEFT_COMMAND>
-                , <&macro_tap &kp C>
-                , <&macro_release &kp LEFT_COMMAND>
-                ;
-        };
-        m_cut: m_cut {
-            label = "cut";
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings
-                = <&macro_press &kp LEFT_COMMAND>
-                , <&macro_tap &kp X>
-                , <&macro_release &kp LEFT_COMMAND>
-                ;
-        };
-        m_paste: m_paste {
-            label = "paste";
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings
-                = <&macro_press &kp LEFT_COMMAND>
-                , <&macro_tap &kp V>
-                , <&macro_release &kp LEFT_COMMAND>
-                ;
-        };
-
     };
 
     keymap {
@@ -133,7 +105,7 @@
 
         nav {
             bindings = <
- &none   &none  &none  &none  &none  &none  &kp LG(C) &m_cut  &none    &kp DEL            &m_paste  &none
+ &none   &none  &none  &none  &none  &none  &kp LG(C) &kp LG(X)  &none    &kp DEL            &kp LG(V)  &none
  &none   &none  &none  &none  &none  &none   &kp LEFT_ARROW  &kp DOWN_ARROW  &kp UP_ARROW  &kp RIGHT_ARROW  &trans &none
  &none  &kp TAB  &none  &none  &none  &none  &none          &none          &none        &none           &trans  &none
                           MO_TO(1)   MO_TO(2)  &ss_cw &sk LCTRL  &to 0    MO_TO(3)
