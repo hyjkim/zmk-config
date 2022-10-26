@@ -39,7 +39,7 @@
       cl2: cl2 {
             compatible = "zmk,behavior-tap-dance";
             label = "TAP_DANCE_MOD_TAP";
-            #binding-cells = <0>;aaaaaa
+            #binding-cells = <0>;
             tapping-term-ms = <200>;
             bindings = <&sl 2>, <&to 2>;
         };
