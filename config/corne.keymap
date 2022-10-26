@@ -36,7 +36,7 @@
         };
 
       // tap: sticky layer 2 | double tap: toggle layer 2
-      cl2: cl2 {b
+      cl2: cl2 {
             compatible = "zmk,behavior-tap-dance";
             label = "TAP_DANCE_MOD_TAP";
             #binding-cells = <0>;aaaaaa
