@@ -50,10 +50,10 @@
     sp_meh: sp_meh {
         compatible = "zmk,behavior-hold-tap";
         label = "SPACE_MEH";
-        #binding-cells = <0>;
+        #binding-cells = <1>;
         tapping-term-ms = <200>;
         quick_tap_ms = <150>;
-        bindings = <&kp SPACE>, <&m_meh>;
+        bindings = <&kp>, <&m_meh>;
     };
     };
 
@@ -115,7 +115,7 @@
   &none   &kp A   &kp S   &kp D   &kp F      &kp G      &kp H      &kp J      &kp K    &kp L   &kp SQT   &none
   &none   &kp Z   &kp X   &kp C   &kp V      &kp B      &kp N      &kp M  &kp COMMA  &kp DOT  &kp BSPC   &none
                           //MO_TO(1)   MO_TO(2)  &ss_cw &sk LCTRL  &sp_meh    MO_TO(3)
-                          MO_TO(1)   MO_TO(2)  &ss_cw &sk LCTRL  &kp SPACE    MO_TO(3)
+                          MO_TO(1)   MO_TO(2)  &ss_cw &sk LCTRL  &sp_meh SPACE    MO_TO(3)
             >;
         };
 
