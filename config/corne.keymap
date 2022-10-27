@@ -55,7 +55,6 @@ ht: hold_tap {
     // tap: sticky layer 1 | double tap: toggle layer 1
 cl1: cl1 {
        compatible = "zmk,behavior-tap-dance";
-       compatible = "zmk,behavior-mod-morph";
        label = "TD_LAYER_1";
 #binding-cells = <0>;
        tapping-term-ms = <200>;
