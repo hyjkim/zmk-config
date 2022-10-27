@@ -55,6 +55,7 @@ ht: hold_tap {
     // tap: sticky layer 1 | double tap: toggle layer 1
 cl1: cl1 {
        compatible = "zmk,behavior-tap-dance";
+       compatible = "zmk,behavior-mod-morph";
        label = "TD_LAYER_1";
 #binding-cells = <0>;
        tapping-term-ms = <200>;
@@ -124,7 +125,7 @@ cl3: cl3 {
       //                    | num | sym |SHFT ||||| CTRL | SPC  | NAV |
 
       bindings = <
-      &none  &kp TILDE  &none      &none      &kp LEFT_PARENTHESIS  &none      &none  &kp RIGHT_PARENTHESIS  &kp PLUS  &kp SLASH  &kp BACKSPACE  &none
+        &none  &kp TILDE  &none      &none      &kp LEFT_PARENTHESIS  &none      &none  &kp RIGHT_PARENTHESIS  &kp PLUS  &kp QMARK  &kp PIPE  &none
         &none  &kp GRAVE  &kp EQUAL  &kp COLON  &kp LEFT_BRACKET        &kp LT     &kp GT  &kp RIGHT_BRACKET        &kp MINUS &kp UNDER  &kp DOUBLE_QUOTES  &none
         &none  &kp TAB    &none      &kp SEMI   &kp LEFT_BRACE      &none      &none  &kp RIGHT_BRACE      &trans    &trans  &kp BSPC &none
         &cl1   &cl2  &ss_cw &sk LCTRL  &to 0    &to 3
