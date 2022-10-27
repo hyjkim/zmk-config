@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2020 The ZMK Contributors
+ * Copyight (c) 2020 The ZMK Contributors
  *
  * SPDX-License-Identifier: MIT
  */
@@ -212,12 +212,10 @@ ht: hold_tap {
       key-positions = <9 21>;
     };
 
-
     cb_bslash {
       bindings = <&kp BACKSLASH>;
       key-positions = <10 22>;
     };
 
   };
-};
 };
