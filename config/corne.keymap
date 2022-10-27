@@ -108,7 +108,7 @@ cl3: cl3 {
 
       bindings = <
         &none  &kp C_VOLUME_DOWN   &kp C_VOLUME_UP  &kp C_BRI_DN  &kp C_BRI_UP  &kp KP_MULTIPLY      &kp PLUS  &ht F7 NUMBER_7 &ht F8 NUMBER_8 &ht F9 NUMBER_9     &none   &none
-        &none         &bt BT_CLR      &bt BT_SEL 0    &bt BT_PRV    &bt BT_NXT    &kp KP_DIVIDE     &kp MINUS  &ht F4 NUMBER_4  &ht F5 NUMBER_5  &ht F6 NUMBER_6  &kp ENTER   &none
+        &none   &to 4 &none  &none  &none    &kp KP_DIVIDE     &kp MINUS  &ht F4 NUMBER_4  &ht F5 NUMBER_5  &ht F6 NUMBER_6  &kp ENTER   &none
         &none            &kp TAB  &kp C_PLAY_PAUSE    &kp C_NEXT    &kp PERIOD     &kp KP_EQUAL  &kp NUMBER_0  &ht F1 NUMBER_1  &ht F2 NUMBER_2  &ht F3 NUMBER_3    &trans   &none
         &cl1   &cl2  &ss_cw &sk LCTRL  &to 0    &to 3
         >;
@@ -116,15 +116,17 @@ cl3: cl3 {
 
     symbol_layer {
       // -----------------------------------------------------------------------------------------
-      // |  TAB |  !  |  @  |  #  |  $  |  %  |   |  ^  |  &  |  *  |  (  |  )  | BKSP |
-      // | CTRL |     |     |     |     |     |   |  -  |  =  |  [  |  ]  |  \  |  `   |
-      // | SHFT |     |     |     |     |     |   |  _  |  +  |  {  |  }  | "|" |  ~   |
-      //                    | GUI |     | SPC |   | ENT |     | ALT |
+      //  combos|  !  |  @  |  #  |  $  |  %  |||||  ^  |  &  |  *  |  /  |  \  |      |
+
+      // | NONE |     |     |     |  (  |     |||||     |  )  |  +  |  ?  |  |  | NONE |
+      // | NONE |  `  |  ~  |     |  [  |  <  |||||  >  |  ]  |  -  |  _  |  "  | NONE |
+      // | NONE | TAB |     |     |  {  |     |||||     |  }  |  ,  |  .  | BSPC| NONE |
+      //                    | num | sym |SHFT ||||| CTRL | SPC  | NAV |
 
       bindings = <
-        &none   &kp EXCL     &kp AT          &kp HASH           &kp DLLR      &kp PRCNT  &kp CARET              &kp AMPS        &kp KP_MULTIPLY         &kp SLASH  &kp BACKSLASH   &none
-        &none  &kp TILDE  &kp GRAVE  &kp LEFT_BRACKET  &kp RIGHT_BRACKET      &kp COLON  &kp MINUS  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp PIPE  &kp DOUBLE_QUOTES       &none
-        &none    &kp TAB  &kp EQUAL    &kp LEFT_BRACE    &kp RIGHT_BRACE  &kp SEMICOLON   &kp PLUS             &kp UNDER                 &trans            &trans         &trans   &none
+        &none  &none      &none      &none  &kp LEFT_PARENTHESIS  &none      &none  &kp RIGHT_PARENTHESIS  &kp PLUS  &none  &none  &none
+        &none  &kp GRAVE  &kp TILDE  &none  &kp LEFT_BRACE        &kp LT     &kp GT  &kp RIGHT_BRACE        &kp MINUS &kp UNDER  &kp DOUBLE_QUOTES  &none
+        &none  &kp TAB    &none      &none  &kp LEFT_BRACKET      &none      &none  &kp RIGHT_BRACKET      &trans    &trans  &BSPC &non
         &cl1   &cl2  &ss_cw &sk LCTRL  &to 0    &to 3
         >;
     };
@@ -137,6 +139,15 @@ cl3: cl3 {
         &cl1   &cl2  &ss_cw &sk LCTRL  &to 0    &to 3
         >;
     };
+
+    settings {
+      bindings = <
+        &none   &none  &none  &none  &none  &none    &bt BT_CLR      &bt BT_SEL 0    &bt BT_PRV    &bt BT_NXT    &none
+        &none   &none  &none  &none  &none  &none    &none    &none    &none    &none    &none    &none
+        &none   &none  &none  &none  &none  &none    &none    &none    &none    &none    &none    &none
+        &cl1   &cl2  &ss_cw &sk LCTRL  &to 0    &to 3
+        >;
+      }
   };
 
   // Key numbers
