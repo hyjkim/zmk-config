@@ -183,7 +183,7 @@
         };
 
 
-        cb_prcnt 
+        cb_prcnt {
           bindings = <&kp PRCNT>;
           key-positions = <5 17>;
         };
