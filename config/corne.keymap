@@ -29,7 +29,7 @@
       // tap: sticky layer 1 | double tap: toggle layer 1
       cl1: cl1 {
             compatible = "zmk,behavior-tap-dance";
-            label = "TAP_DANCE_MOD_TAP";
+            label = "TD_LAYER_1";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
             bindings = <&sl 1>, <&to 1>;
@@ -38,7 +38,7 @@
       // tap: sticky layer 2 | double tap: toggle layer 2
       cl2: cl2 {
             compatible = "zmk,behavior-tap-dance";
-            label = "TAP_DANCE_MOD_TAP";
+            label = "TD_LAYER_2";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
             bindings = <&sl 2>, <&to 2>;
@@ -47,7 +47,7 @@
       // tap: sticky layer 3 | double tap: toggle layer 3
       cl3: cl3 {
             compatible = "zmk,behavior-tap-dance";
-            label = "TAP_DANCE_MOD_TAP";
+            label = "TD_LAYER_3";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
             bindings = <&sl 3>, <&to 3>;
