@@ -26,33 +26,6 @@
             tapping-term-ms = <200>;
             bindings = <&mo>, <&to>;
         };
-      // tap: sticky layer 1 | double tap: toggle layer 1
-      cl1: cl1 {
-            compatible = "zmk,behavior-tap-dance";
-            label = "TD_LAYER_1";
-            #binding-cells = <0>;
-            tapping-term-ms = <200>;
-            bindings = <&sl 1>, <&to 1>;
-        };
-
-      // tap: sticky layer 2 | double tap: toggle layer 2
-      cl2: cl2 {
-            compatible = "zmk,behavior-tap-dance";
-            label = "TD_LAYER_2";
-            #binding-cells = <0>;
-            tapping-term-ms = <200>;
-            bindings = <&sl 2>, <&to 2>;
-        };
-
-      // tap: sticky layer 3 | double tap: toggle layer 3
-      cl3: cl3 {
-            compatible = "zmk,behavior-tap-dance";
-            label = "TD_LAYER_3";
-            #binding-cells = <0>;
-            tapping-term-ms = <200>;
-            bindings = <&sl 3>, <&to 3>;
-        };
-
 
 // tap: sticky shift | double tap: capsword | triple tap: cancel capsword
 // ZMK_BEHAVIOR(ss_cw, tap_dance,
@@ -95,7 +68,7 @@
   &none   &kp Q   &kp W   &kp E   &kp R      &kp T      &kp Y      &kp U      &kp I    &kp O     &kp P   &none
   &none   &kp A   &kp S   &kp D   &kp F      &kp G      &kp H      &kp J      &kp K    &kp L   &kp SQT   &none
   &none   &kp Z   &kp X   &kp C   &kp V      &kp B      &kp N      &kp M  &kp COMMA  &kp DOT  &kp BSPC   &none
-                          &cl1   &cl2  &ss_cw &sk LCTRL  &mt LC(LS(LALT)) SPACE    &cl3
+                          &sl1   &sl2  &ss_cw &sk LCTRL  &mt LC(LS(LALT)) SPACE    &to3
             >;
         };
 
@@ -110,7 +83,7 @@
   &none  &kp C_VOLUME_DOWN   &kp C_VOLUME_UP  &kp C_BRI_DN  &kp C_BRI_UP  &kp KP_MULTIPLY      &kp PLUS  &ht F7 NUMBER_7 &ht F8 NUMBER_8 &ht F9 NUMBER_9     &none   &none
   &none         &bt BT_CLR      &bt BT_SEL 0    &bt BT_PRV    &bt BT_NXT    &kp KP_DIVIDE     &kp MINUS  &ht F4 NUMBER_4  &ht F5 NUMBER_5  &ht F6 NUMBER_6  &kp ENTER   &none
   &none            &kp TAB  &kp C_PLAY_PAUSE    &kp C_NEXT    &kp PERIOD     &kp KP_EQUAL  &kp NUMBER_0  &ht F1 NUMBER_1  &ht F2 NUMBER_2  &ht F3 NUMBER_3    &trans   &none
-                          &cl1   &cl2  &ss_cw &sk LCTRL  &to 0    &cl3
+                          &to1   &sl2  &ss_cw &sk LCTRL  &to 0    &to3
             >;
         };
 
@@ -125,7 +98,7 @@
   &none   &kp EXCL     &kp AT          &kp HASH           &kp DLLR      &kp PRCNT  &kp CARET              &kp AMPS        &kp KP_MULTIPLY         &kp SLASH  &kp BACKSLASH   &none
   &none  &kp TILDE  &kp GRAVE  &kp LEFT_BRACKET  &kp RIGHT_BRACKET      &kp COLON  &kp MINUS  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp DOUBLE_QUOTES &kp SINGLE_QUOTE      &none
   &none    &kp TAB  &kp EQUAL    &kp LEFT_BRACE    &kp RIGHT_BRACE  &kp SEMICOLON   &kp PLUS             &kp UNDER                 &trans            &trans         &trans   &none
-                          &cl1   &cl2  &ss_cw &sk LCTRL  &to 0    &cl3
+                          &sl1   &to2  &ss_cw &sk LCTRL  &to 0    &to3
             >;
         };
 
@@ -134,7 +107,7 @@
  &none   &none  &none  &none  &none  &none  &kp LG(C) &kp LG(X)  &none    &kp DEL            &kp LG(V)  &none
  &none   &none  &none  &none  &none  &none   &kp LEFT_ARROW  &kp DOWN_ARROW  &kp UP_ARROW  &kp RIGHT_ARROW  &trans &none
  &none  &kp TAB  &none  &none  &none  &none  &none          &none          &none        &none           &trans  &none
-                          &cl1   &cl2  &ss_cw &sk LCTRL  &to 0    &cl3
+                          &sl1   &sl2  &ss_cw &sk LCTRL  &to 0    &to3
             >;
         };
     };
