@@ -124,7 +124,7 @@ cl3: cl3 {
       //                    | num | sym |SHFT ||||| CTRL | SPC  | NAV |
 
       bindings = <
-        &none  &kp TILDE  &none      &none      &kp LEFT_PARENTHESIS  &none      &none  &kp RIGHT_PARENTHESIS  &kp PLUS  &none  &none  &none
+      &none  &kp TILDE  &none      &none      &kp LEFT_PARENTHESIS  &none      &none  &kp RIGHT_PARENTHESIS  &kp PLUS  &kp SLASH  &kp BACKSPACE  &none
         &none  &kp GRAVE  &kp EQUAL  &kp COLON  &kp LEFT_BRACKET        &kp LT     &kp GT  &kp RIGHT_BRACKET        &kp MINUS &kp UNDER  &kp DOUBLE_QUOTES  &none
         &none  &kp TAB    &none      &kp SEMI   &kp LEFT_BRACE      &none      &none  &kp RIGHT_BRACE      &trans    &trans  &kp BSPC &none
         &cl1   &cl2  &ss_cw &sk LCTRL  &to 0    &to 3
