@@ -111,7 +111,7 @@ cl3: cl3 {
         &none  &kp C_VOLUME_DOWN   &kp C_VOLUME_UP  &kp C_BRI_DN  &kp C_BRI_UP  &kp KP_MULTIPLY      &kp PLUS  &ht F7 NUMBER_7 &ht F8 NUMBER_8 &ht F9 NUMBER_9     &none   &none
         &none   &to 4 &none  &none  &none    &kp KP_DIVIDE     &kp MINUS  &ht F4 NUMBER_4  &ht F5 NUMBER_5  &ht F6 NUMBER_6  &kp ENTER   &none
         &none            &kp TAB  &kp C_PLAY_PAUSE    &kp C_NEXT    &kp PERIOD     &kp KP_EQUAL  &kp NUMBER_0  &ht F1 NUMBER_1  &ht F2 NUMBER_2  &ht F3 NUMBER_3    &trans   &none
-        &cl1   &cl2  &ss_cw &sk LCTRL  &to 0    &to 3
+        &cl1   &cl2  &ss_cw &mt LCTRL NUMBER_0  &to 0    &to 3
         >;
     };
 
@@ -125,7 +125,7 @@ cl3: cl3 {
       //                    | num | sym |SHFT ||||| CTRL | SPC  | NAV |
 
       bindings = <
-        &none  &kp TILDE  &none      &none      &kp LEFT_PARENTHESIS  &none      &none  &kp RIGHT_PARENTHESIS  &kp PLUS  &kp QMARK  &kp PIPE  &none
+      &none  &kp TILDE  &none      &none      &kp LEFT_PARENTHESIS  &none      &none  &kp RIGHT_PARENTHESIS  &kp PLUS  &kp QMARK  &kp PIPE  &none
         &none  &kp GRAVE  &kp EQUAL  &kp COLON  &kp LEFT_BRACKET        &kp LT     &kp GT  &kp RIGHT_BRACKET        &kp MINUS &kp UNDER  &kp DOUBLE_QUOTES  &none
         &none  &kp TAB    &none      &kp SEMI   &kp LEFT_BRACE      &none      &none  &kp RIGHT_BRACE      &trans    &trans  &kp BSPC &none
         &cl1   &cl2  &ss_cw &sk LCTRL  &to 0    &to 3
