@@ -119,14 +119,14 @@ cl3: cl3 {
       //  combos|  !  |  @  |  #  |  $  |  %  |||||  ^  |  &  |  *  |  /  |  \  |      |
 
       // | NONE |     |     |     |  (  |     |||||     |  )  |  +  |  ?  |  |  | NONE |
-      // | NONE |  `  |  ~  |     |  [  |  <  |||||  >  |  ]  |  -  |  _  |  "  | NONE |
-      // | NONE | TAB |     |     |  {  |     |||||     |  }  |  ,  |  .  | BSPC| NONE |
+      // | NONE |  `  |  ~  |  :  |  [  |  <  |||||  >  |  ]  |  -  |  _  |  "  | NONE |
+      // | NONE | TAB |     |  ;  |  {  |     |||||     |  }  |  ,  |  .  | BSPC| NONE |
       //                    | num | sym |SHFT ||||| CTRL | SPC  | NAV |
 
       bindings = <
-        &none  &none      &none      &none  &kp LEFT_PARENTHESIS  &none      &none  &kp RIGHT_PARENTHESIS  &kp PLUS  &none  &none  &none
-        &none  &kp GRAVE  &kp TILDE  &none  &kp LEFT_BRACE        &kp LT     &kp GT  &kp RIGHT_BRACE        &kp MINUS &kp UNDER  &kp DOUBLE_QUOTES  &none
-        &none  &kp TAB    &none      &none  &kp LEFT_BRACKET      &none      &none  &kp RIGHT_BRACKET      &trans    &trans  &BSPC &non
+        &none  &none      &none      &none      &kp LEFT_PARENTHESIS  &none      &none  &kp RIGHT_PARENTHESIS  &kp PLUS  &none  &none  &none
+        &none  &kp GRAVE  &kp TILDE  &kp COLON  &kp LEFT_BRACE        &kp LT     &kp GT  &kp RIGHT_BRACE        &kp MINUS &kp UNDER  &kp DOUBLE_QUOTES  &none
+        &none  &kp TAB    &none      &kp SEMI   &kp LEFT_BRACKET      &none      &none  &kp RIGHT_BRACKET      &trans    &trans  &kp BSPC &none
         &cl1   &cl2  &ss_cw &sk LCTRL  &to 0    &to 3
         >;
     };
