@@ -1,4 +1,4 @@
-/*
+/*=G
  * Copyight (c) 2020 The ZMK Contributors
  *
  * SPDX-License-Identifier: MIT
@@ -95,7 +95,7 @@ cl3: cl3 {
         &none   &kp Q   &kp W   &kp E   &kp R      &kp T      &kp Y      &kp U      &kp I    &kp O     &kp P   &none
         &none   &kp A   &kp S   &kp D   &kp F      &kp G      &kp H      &kp J      &kp K    &kp L   &kp SQT   &none
         &none   &kp Z   &kp X   &kp C   &kp V      &kp B      &kp N      &kp M  &kp COMMA  &kp DOT  &kp BSPC   &none
-        &cl1   &cl2  &ss_cw &sk LCTRL  &mt LC(LS(LALT)) SPACE    &to 3
+        &cl1   &cl2  &ss_cw &sk LCTRL  &mt LC(LS(LALT)) SPACE    MO_TO(3)
         >;
     };
 
@@ -110,7 +110,7 @@ cl3: cl3 {
         &none  &kp C_VOLUME_DOWN   &kp C_VOLUME_UP  &kp C_BRI_DN  &kp C_BRI_UP  &kp KP_MULTIPLY      &kp PLUS  &ht F7 NUMBER_7 &ht F8 NUMBER_8 &ht F9 NUMBER_9     &none   &none
         &none   &to 4 &none  &none  &none    &kp KP_DIVIDE     &kp MINUS  &ht F4 NUMBER_4  &ht F5 NUMBER_5  &ht F6 NUMBER_6  &kp ENTER   &none
         &none            &kp TAB  &kp C_PLAY_PAUSE    &kp C_NEXT    &kp PERIOD     &kp KP_EQUAL  &kp PERIOD  &ht F1 NUMBER_1  &ht F2 NUMBER_2  &ht F3 NUMBER_3    &trans   &none
-        &cl1   &cl2  &ss_cw &mt LCTRL NUMBER_0  &to 0    &to 3
+        &cl1   &cl2  &ss_cw &mt LCTRL NUMBER_0  &to 0    MO_TO(3)
         >;
     };
 
@@ -124,10 +124,10 @@ cl3: cl3 {
       //                    | num | sym |SHFT ||||| CTRL | SPC  | NAV |
 
       bindings = <
-      &none  &kp TILDE  &none      &none      &kp LEFT_PARENTHESIS  &none      &none  &kp RIGHT_PARENTHESIS  &kp PLUS  &kp QMARK  &kp PIPE  &none
+        &none  &kp TILDE  &none      &none      &kp LEFT_PARENTHESIS  &none      &none  &kp RIGHT_PARENTHESIS  &kp PLUS  &kp QMARK  &kp PIPE  &none
         &none  &kp GRAVE  &kp EQUAL  &kp COLON  &kp LEFT_BRACKET        &kp LT     &kp GT  &kp RIGHT_BRACKET        &kp MINUS &kp UNDER  &kp DOUBLE_QUOTES  &none
         &none  &kp TAB    &none      &kp SEMI   &kp LEFT_BRACE      &none      &none  &kp RIGHT_BRACE      &trans    &trans  &kp BSPC &none
-        &cl1   &cl2  &ss_cw &sk LCTRL  &to 0    &to 3
+        &cl1   &cl2  &ss_cw &sk LCTRL  &to 0    MO_TO(3)
         >;
     };
 
@@ -136,7 +136,7 @@ cl3: cl3 {
         &none   &none  &none  &none  &none  &none  &kp LG(C) &kp LG(X)  &none    &kp DEL            &kp LG(V)  &none
         &none   &none  &none  &none  &none  &none   &kp LEFT_ARROW  &kp DOWN_ARROW  &kp UP_ARROW  &kp RIGHT_ARROW  &trans &none
         &none  &kp TAB  &none  &none  &none  &none  &none          &none          &none        &none           &trans  &none
-        &cl1   &cl2  &ss_cw &sk LCTRL  &to 0    &to 3
+        &cl1   &cl2  &ss_cw &sk LCTRL  &to 0    MO_TO(3)
         >;
     };
 
@@ -145,9 +145,9 @@ cl3: cl3 {
         &none   &none  &none  &none  &none  &none    &bt BT_CLR      &bt BT_SEL 0    &bt BT_PRV    &bt BT_NXT    &none
         &none   &none  &none  &none  &none  &none    &none    &none    &none    &none    &none    &none
         &none   &none  &none  &none  &none  &none    &none    &none    &none    &none    &none    &none
-        &cl1   &cl2  &ss_cw &sk LCTRL  &to 0    &to 3
+        &cl1   &cl2  &ss_cw &sk LCTRL  &to 0    MO_TO(3)
         >;
-      };
+    };
   };
 
   // Key numbers
