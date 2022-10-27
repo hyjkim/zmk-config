@@ -112,6 +112,13 @@
         };
     };
 
+// Key numbers
+// -----------------------------------------------------------------------------------------
+// | NONE |  1  |  2  |  3  |  4  |  5  |   |  6  |  7   |  8  |  9  |  10  | NONE |
+// | NONE |  13 |  14 |  15 |  16 |  17 |   |  18 |  19  |  20 |  21 |  22  | NONE |
+// | NONE |  25 |  26 |  27 |  28 |  29 |   |  30 |  31  |  32 |  33 |  34  | NONE |
+//                    | 36  |  37 | 38  |   |  39 |  40  |  41 |
+
     // Homerow bindings
     combos {
         compatible = "zmk,combos";
@@ -153,5 +160,64 @@
             bindings = <&kp RIGHT_ALT>;
             key-positions = <19 21>;
         };
+
+        // symbols
+        cb_excl {
+          bindings = <&kp EXCL>
+          key-positions = <1, 13>
+        };
+
+        cb_at {
+          bindings = <&kp AT>
+          key-positions = <2, 14>
+        };
+        
+        cb_hash {
+          bindings = <&kp HASH>
+          key-positions = <3, 15>
+        };
+
+        cb_dllr {
+          bindings = <&kp DLLR>
+          key-positions = <4, 16>
+        };
+
+
+        cb_prcnt {
+          bindings = <&kp PRCNT>
+          key-positions = <5, 17>
+        };
+
+
+        cb_caret {
+          bindings = <&kp CARET>
+          key-positions = <6, 18>
+        };
+
+
+        cb_amps {
+          bindings = <&kp AMPS>
+          key-positions = <7, 19>
+        };
+
+
+        cb_mult {
+          bindings = <&kp KP_MULTIPLY>
+          key-positions = <8, 20>
+        };
+
+
+        cb_slash {
+          bindings = <&kp SLASH>
+          key-positions = <9, 21>
+        };
+
+
+        cb_bslash {
+          bindings = <&kp BACKSLASH>
+          key-positions = <10, 22>
+        };
+
+    };
     };
 };
