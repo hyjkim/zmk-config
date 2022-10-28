@@ -176,19 +176,16 @@ cl3: cl3 {
     compatible = "zmk,combos";
 
     combo_esc {
-      timeout-ms = <50>;
-      key-positions = <1 2>;
+      key-positions = <1 13>;
       bindings = <&kp ESC>;
     };
 
     combo_ret {
-      timeout-ms = <50>;
-      key-positions = <21 22>;
+      key-positions = <22 34>;
       bindings = <&kp RET>;
     };
 
     combo_tab {
-      timeout-ms = <50>;
       key-positions = <25 26>;
       bindings = <&kp TAB>;
     };
@@ -226,7 +223,7 @@ cl3: cl3 {
     // settings related combos
     to_set {
       bindings = <&to SET>;
-      key-positions = <2 3 4>;
+      key-positions = <2 3 5>;
       layers = <NAV>;
       };
     bt_clr {
