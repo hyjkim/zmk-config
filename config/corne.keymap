@@ -33,22 +33,22 @@ mo_to: behavior_mo_to {
          bindings = <&mo>, <&to>;
        };
 
-// prevent multiple uppercase letters on sticky shift https://github.com/zmkfirmware/zmk/issues/903
-    skq: sticky_key_quick_release {
-      compatible = "zmk,behavior-sticky-key";
-      label = "STICKY_KEY_QUICK_RELEASE";
-      #binding-cells = <1>;
-      bindings = <&kp>;
-      release-after-ms = <1000>;
-      quick-release;
-    };
-       // tap: sticky shift | double tap: capsword | triple tap: cancel capsword
-       // ZMK_BEHAVIOR(ss_cw, tap_dance,
-       //     tapping-term-ms = <200>;
-       //     bindings = <&sk LSHFT>, <&caps_word>, <CANCEL>;
-       // )
-       // tap: sticky-shift | lshft + tap: caps-word | hold: shift
-       // from https://github.com/urob/zmk-config/blob/main/config/base.keymap 
+       // prevent multiple uppercase letters on sticky shift https://github.com/zmkfirmware/zmk/issues/903
+skq: sticky_key_quick_release {
+       compatible = "zmk,behavior-sticky-key";
+       label = "STICKY_KEY_QUICK_RELEASE";
+#binding-cells = <1>;
+       bindings = <&kp>;
+       release-after-ms = <1000>;
+       quick-release;
+     };
+     // tap: sticky shift | double tap: capsword | triple tap: cancel capsword
+     // ZMK_BEHAVIOR(ss_cw, tap_dance,
+     //     tapping-term-ms = <200>;
+     //     bindings = <&sk LSHFT>, <&caps_word>, <CANCEL>;
+     // )
+     // tap: sticky-shift | lshft + tap: caps-word | hold: shift
+     // from https://github.com/urob/zmk-config/blob/main/config/base.keymap 
 ss_cw: ss_cw {
          compatible = "zmk,behavior-mod-morph";
 #binding-cells = <0>;
@@ -93,8 +93,6 @@ cl3: cl3 {
        tapping-term-ms = <200>;
        bindings = <&sl 3>, <&to 3>;
      };
-  };
-
   };
 
   keymap {
@@ -219,7 +217,7 @@ cl3: cl3 {
       bindings = <&kp RIGHT_ALT>;
       key-positions = <19 21>;
     };
-    
+
     right_alt_cmd {
       bindings = <&kp RG(RIGHT_ALT)>;
       key-positions = <19 20 21>;
