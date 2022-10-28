@@ -176,7 +176,7 @@ cl3: cl3 {
     compatible = "zmk,combos";
 
     combo_esc {
-      key-positions = <1 13>;
+      key-positions = <13 25>;
       bindings = <&kp ESC>;
     };
 
