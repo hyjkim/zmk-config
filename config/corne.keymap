@@ -53,7 +53,7 @@ ss_cw: ss_cw {
          compatible = "zmk,behavior-mod-morph";
 #binding-cells = <0>;
          label = "ss_cw";
-         bindings = <&sk LSHFT>, <&caps_word>;
+         bindings = <&skq LSHFT>, <&caps_word>;
          mods = <(MOD_LSFT)>;
        };
 
@@ -109,7 +109,7 @@ cl3: cl3 {
         &none   &kp Q   &kp W   &kp E   &kp R      &kp T      &kp Y      &kp U      &kp I    &kp O     &kp P   &none
         &none   &kp A   &kp S   &kp D   &kp F      &kp G      &kp H      &kp J      &kp K    &kp L   &kp SQT   &none
         &none   &kp Z   &kp X   &kp C   &kp V      &kp B      &kp N      &kp M  &kp COMMA  &kp DOT  &kp BSPC   &none
-        &cl1   &cl2  &ss_cw &skp LCTRL  &mt LC(LS(LALT)) SPACE    MO_TO(3)
+        &cl1   &cl2  &ss_cw &skq LCTRL  &mt LC(LS(LALT)) SPACE    MO_TO(3)
         >;
     };
 
