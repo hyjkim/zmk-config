@@ -18,7 +18,9 @@
 
 &mt {
   flavor = "tap-preferred";
-  //       tapping-term-ms = <1000>; 
+  tapping-term-ms = <200>; 
+  quick-tap-ms = <125>;
+  
 };
 
 / {
@@ -223,7 +225,7 @@ cl3: cl3 {
     // settings related combos
     to_set {
       bindings = <&to SET>;
-      key-positions = <2 3 5>;
+      key-positions = <2 3 4>;
       layers = <NAV>;
       };
     bt_clr {
