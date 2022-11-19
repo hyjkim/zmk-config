@@ -157,7 +157,7 @@ cl3: cl3 {
       bindings = <
         &none   &none  &none &kp LA(RIGHT_ARROW) &kp LG(LS(Z))  &none  &kp LG(C) &kp LG(Z)  &to DEF    &kp DEL            &kp LG(V)  &none
         &none   &none  &none &kp LG(X)  &none  &none   &kp LEFT_ARROW  &kp DOWN_ARROW  &kp UP_ARROW  &kp RIGHT_ARROW  &none &none
-        &none  &kp TAB  &kp DEL  &none  &none  LA(LEFT_ARROW)           &none &kp LG(LEFT_BRACKET)  &kp LG(RIGHT_BRACKET)        &none           &trans  &none
+        &none  &kp TAB  &kp DEL  &none  &none  &kp LA(LEFT_ARROW)           &none &kp LG(LEFT_BRACKET)  &kp LG(RIGHT_BRACKET)        &none           &trans  &none
         &cl1   &cl2  &ss_cw &sk LCTRL  &to DEF    &cl3
         >;
     };
