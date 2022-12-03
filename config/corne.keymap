@@ -120,12 +120,12 @@ cl3: cl3 {
       // | NONE |vol-|vol+|bri-|bri+|    |||||  +  |  7  |  8  |  9  |  nav  | NONE |
       // | NONE |    | =  | :  |    |    |||||  -  |  4  |  5  |  6  |       | NONE | 
       // | NONE |    |    |    |    |    |||||  .  |  1  |  2  |  3  |  BSPC  | NONE |
-      //                    |    |    |    |||||  0  | to0  |     |
+      //                  |    |    |    |||||  0  | to0  |     |
 
       bindings = <
-        &none  &kp C_VOLUME_DOWN   &kp C_VOLUME_UP  &kp C_BRI_UP  &kp C_BRI_DN  &kp KP_MULTIPLY      &kp PLUS  &ht F7 NUMBER_7 &ht F8 NUMBER_8 &ht F9 NUMBER_9     &none   &none
-        &none   &none   &kp EQUAL  &kp COLON   &none    &kp KP_DIVIDE     &kp MINUS  &ht F4 NUMBER_4  &ht F5 NUMBER_5  &ht F6 NUMBER_6  &kp ENTER   &none
-        &none            &kp TAB  &kp C_PLAY_PAUSE    &kp C_NEXT    &kp PERIOD     &kp KP_EQUAL  &kp PERIOD  &ht F1 NUMBER_1  &ht F2 NUMBER_2  &ht F3 NUMBER_3    &trans   &none
+        &none  &kp C_VOLUME_DOWN   &kp C_VOLUME_UP  &kp C_BRI_UP  &kp C_BRI_DN   &kp KP_MULTIPLY  &kp PLUS         &ht F7 NUMBER_7  &ht F8 NUMBER_8  &ht F9 NUMBER_9    &none     &none
+        &none  &none               &kp EQUAL        &kp COLON     &none          &kp KP_DIVIDE    &kp MINUS        &ht F4 NUMBER_4  &ht F5 NUMBER_5  &ht F6 NUMBER_6    &kp ENTER &none
+        &none  &kp TAB             &kp C_PLAY_PAUSE &kp C_NEXT    &kp PERIOD     &kp KP_EQUAL     &kp PERIOD       &ht F1 NUMBER_1  &ht F2 NUMBER_2  &ht F3 NUMBER_3    &trans    &none
         &cl1   &cl2  &ss_cw &mt LCTRL NUMBER_0  &to 0    &cl3
         >;
     };
@@ -155,10 +155,10 @@ cl3: cl3 {
       //                    | num | sym |SHFT ||||| CTRL | to0 | NAV |
 
       bindings = <
-        &none   &none  &none &kp LA(RIGHT_ARROW) &kp LG(LS(Z))  &none  &kp LG(C) &kp LG(Z)  &to DEF    &kp DEL            &kp LG(V)  &none
-        &none   &none  &none &kp LG(X)  &none  &none   &kp LEFT_ARROW  &kp DOWN_ARROW  &kp UP_ARROW  &kp RIGHT_ARROW  &none &none
-        &none  &kp TAB  &kp DEL  &none  &none  &kp LA(LEFT_ARROW)           &none &kp LG(LEFT_BRACKET)  &kp LG(RIGHT_BRACKET)        &none           &trans  &none
-        &cl1   &cl2  &ss_cw &sk LCTRL  &to DEF    &cl3
+        &none   &none    &none    &kp LA(RIGHT_ARROW) &kp LG(LS(Z))  &none               &kp LG(C)       &kp LG(Z)             &to DEF                &kp DEL          &kp LG(V)  &none
+        &none   &none    &none    &kp LG(X)           &none          &none               &kp LEFT_ARROW  &kp DOWN_ARROW        &kp UP_ARROW           &kp RIGHT_ARROW  &none      &none
+        &none   &kp TAB  &kp DEL  &none               &none          &kp LA(LEFT_ARROW)  &none           &kp LG(LEFT_BRACKET)  &kp LG(RIGHT_BRACKET)  &none            &trans     &none
+        &cl1    &cl2  &ss_cw &sk LCTRL  &to DEF    &cl3
         >;
     };
 
@@ -193,7 +193,7 @@ cl3: cl3 {
     };
 
     combo_ret {
-      key-positions = <22 34>;
+      key-positions = <33 34>;
       bindings = <&kp RET>;
       timeout-ms = <30>;
     };
