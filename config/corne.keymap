@@ -134,15 +134,15 @@ cl3: cl3 {
       // -----------------------------------------------------------------------------------------
       //  combos|  !  |  @  |  #  |  $  |  %  |||||  ^  |  &  |  *  |  /  |  \  |      |
 
-      // | NONE |  ~  |  :  |     |  (  |     |||||     |  )  |  +  |  ?  | '|' | NONE |
-      // | NONE |  `  |  ;  |  =  |  {  |  <  |||||  >  |  }  |  -  |  _  |  "  | NONE |
-      // | NONE | TAB |     |     |  [  |     |||||     |  ]  |  ,  |  .  | BSPC| NONE |
+      // | NONE |  ~  |     |     |  (  |     |||||     |  )  |  +  |  ?  | '|' | NONE |
+      // | NONE |  `  |  =  |  :  |  [  |  <  |||||  >  |  ]  |  -  |  _  |  "  | NONE |
+      // | NONE | TAB |     |  ;  |  {  |     |||||     |  }  |  ,  |  .  | BSPC| NONE |
       //                    | num | sym |SHFT ||||| CTRL| to0 | NAV |
 
       bindings = <
-        &none  &kp TILDE  &kp COLON  &none      &kp LEFT_PARENTHESIS  &none      &none  &kp RIGHT_PARENTHESIS  &kp PLUS  &kp QMARK  &kp PIPE  &none
-        &none  &kp GRAVE  &kp SEMI   &kp EQUAL  &kp LEFT_BRACE        &kp LT     &kp GT  &kp RIGHT_BRACE        &kp MINUS &kp UNDER  &kp DOUBLE_QUOTES  &none
-        &none  &kp TAB    &none      &none      &kp LEFT_BRACKET      &none      &none  &kp RIGHT_BRACKET      &trans    &trans  &kp BSPC &none
+        &none  &kp TILDE  &none      &none      &kp LEFT_PARENTHESIS  &none      &none  &kp RIGHT_PARENTHESIS  &kp PLUS  &kp QMARK  &kp PIPE  &none
+        &none  &kp GRAVE  &kp EQUAL  &kp COLON  &kp LEFT_BRACKET        &kp LT     &kp GT  &kp RIGHT_BRACKET        &kp MINUS &kp UNDER  &kp DOUBLE_QUOTES  &none
+        &none  &kp TAB    &none      &kp SEMI   &kp LEFT_BRACE      &none      &none  &kp RIGHT_BRACE      &trans    &trans  &kp BSPC &none
         &cl1   &cl2  &ss_cw &sk LCTRL  &to DEF    &cl3
         >;
     };
