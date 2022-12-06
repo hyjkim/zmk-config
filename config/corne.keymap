@@ -332,6 +332,6 @@ cl3: cl3 {
       bindings = <&kp TILDE>;
       key-positions = <1 2>;
       timeout-ms = <30>;
-    }
+    }:
   };
 };
