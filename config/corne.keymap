@@ -199,7 +199,7 @@ cl3: cl3 {
     };
 
     combo_ret_2 {
-      key-posifions = <32 33>;
+      key-positions = <32 33>;
       bindings = <&kp RET>;
       timeout-ms = <30>;
     };
