@@ -198,11 +198,24 @@ cl3: cl3 {
       timeout-ms = <30>;
     };
 
+    combo_ret_2 {
+      key-posifions = <32 33>;
+      bindings = <&kp RET>;
+      timeout-ms = <30>;
+    };
+
     combo_tab {
       key-positions = <25 26>;
       bindings = <&kp TAB>;
       timeout-ms = <30>;
     };
+
+    combo_tab_2 {
+      key-positions = <26 27>;
+      bindings = <&kp TAB>;
+      timeout-ms = <30>;
+    };
+
 
     left_command {
       bindings = <&kp LEFT_COMMAND>;
