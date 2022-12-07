@@ -30,6 +30,7 @@
           label = "JK_force_sticky";
           compatible = "zmk,behavior-macro";
           #binding-cells = <0>;
+          wait-ms = <0>;
           bindings
             = <&to 0>
             , <&sl 1>
