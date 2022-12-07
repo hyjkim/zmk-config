@@ -33,7 +33,7 @@
           wait-ms = <0>;
           bindings
             = <&to 0>
-            , <&sl 1>
+            , <&cl1>
             ;
       };
   };
@@ -88,7 +88,7 @@ cl1: cl1 {
        label = "TD_LAYER_1";
 #binding-cells = <0>;
        tapping-term-ms = <200>;
-       bindings = <&force_sl1>, <&to 1>;
+       bindings = <&sl 1>, <&to 1>;
      };
 
      // tap: sticky layer 2 | double tap: toggle layer 2
@@ -156,7 +156,7 @@ cl3: cl3 {
         &none  &kp TILDE  &none        &none      &kp LEFT_PARENTHESIS  &none      &none  &kp RIGHT_PARENTHESIS  &kp PLUS  &kp QMARK  &kp PIPE  &none
         &none  &kp GRAVE  &kp EQUAL   &kp COLON   &kp LEFT_BRACE        &kp LT     &kp GT  &kp RIGHT_BRACE        &kp MINUS &kp UNDER  &kp DOUBLE_QUOTES  &none
         &none  &kp TAB    &none       &kp SEMI    &kp LEFT_BRACKET      &none      &none  &kp RIGHT_BRACKET      &trans    &trans  &kp BSPC &none
-        &cl1   &cl2  &ss_cw &sk LCTRL  &to DEF    &cl3
+        &force_sl1   &cl2  &ss_cw &sk LCTRL  &to DEF    &cl3
         >;
     };
 
@@ -183,7 +183,7 @@ cl3: cl3 {
         &none   &none  &none  &none  &none  &none    &none      &bt BT_SEL 0    &bt BT_PRV    &bt BT_NXT    &none
         &none   &none  &none  &none  &none  &none    &none    &none    &none    &none    &none    &none
         &none   &none  &none  &none  &none  &none    &none    &none    &none    &none    &none    &none
-        &cl1   &cl2  &ss_cw &sk LCTRL  &to DEF    &cl3
+        &force_sl1   &cl2  &ss_cw &sk LCTRL  &to DEF    &cl3
         >;
     };
   };
