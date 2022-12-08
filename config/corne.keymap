@@ -163,7 +163,7 @@ cl3: cl3 {
       //                    | num | sym |SHFT ||||| CTRL| to0 | NAV |
 
       bindings = <
-        &none  &kp TILDE  &none        &none      &kp LEFT_PARENTHESIS  &none      &none  &kp RIGHT_PARENTHESIS  &kp PLUS  &kp QMARK  & kp PIPE          &none
+        &none  &kp TILDE  &none       &none       &kp LEFT_PARENTHESIS  &none      &none  &kp RIGHT_PARENTHESIS  &kp PLUS  &kp QMARK  &kp PIPE          &none
         &none  &kp GRAVE  &kp EQUAL   &kp COLON   &kp LEFT_BRACE        &kp LT     &kp GT &kp RIGHT_BRACE        &kp MINUS &kp UNDER  &kp DOUBLE_QUOTES  &none
         &none  &kp TAB    &none       &kp SEMI    &kp LEFT_BRACKET      &none      &none  &kp RIGHT_BRACKET      &trans    &trans     &tran              &none
         &force_sl1   &cl2  &ss_cw &sk LCTRL  &to DEF    &cl3
