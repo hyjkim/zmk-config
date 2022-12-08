@@ -36,6 +36,16 @@
             , <&cl1>
             ;
       };
+      force_sl2: force_sticky {
+          label = "JK_force_sticky";
+          compatible = "zmk,behavior-macro";
+          #binding-cells = <0>;
+          wait-ms = <0>;
+          bindings
+            = <&to 0>
+            , <&cl2>
+            ;
+      };
   };
   behaviors {
     // momentary on hold, toggle on tap
@@ -130,9 +140,9 @@ cl3: cl3 {
 
     number_layer {
       // -----------------------------------------------------------------------------------------
-      // | NONE |vol-|vol+|bri-|bri+|    |||||  +  |  7  |  8  |  9  |  nav  | NONE |
-      // | NONE |    | =  | :  |    |    |||||  -  |  4  |  5  |  6  |       | NONE | 
-      // | NONE |    |    |    |    |    |||||  .  |  1  |  2  |  3  |  BSPC  | NONE |
+      // | NONE |vol-|vol+|bri-|bri+|    |||||  +  |  7  |  8  |  9  |  nav   | NONE |
+      // | NONE |    | =  | :  |    |    |||||  -  |  4  |  5  |  6  |  enter | NONE | 
+      // | NONE |TAB |    |    |    |    |||||  .  |  1  |  2  |  3  |  BSPC  | NONE |
       //                  |    |    |    |||||  0  | to0  |     |
 
       bindings = <
@@ -153,9 +163,9 @@ cl3: cl3 {
       //                    | num | sym |SHFT ||||| CTRL| to0 | NAV |
 
       bindings = <
-        &none  &kp TILDE  &none        &none      &kp LEFT_PARENTHESIS  &none      &none  &kp RIGHT_PARENTHESIS  &kp PLUS  &kp QMARK  &kp PIPE  &none
-        &none  &kp GRAVE  &kp EQUAL   &kp COLON   &kp LEFT_BRACE        &kp LT     &kp GT  &kp RIGHT_BRACE        &kp MINUS &kp UNDER  &kp DOUBLE_QUOTES  &none
-        &none  &kp TAB    &none       &kp SEMI    &kp LEFT_BRACKET      &none      &none  &kp RIGHT_BRACKET      &trans    &trans  &kp BSPC &none
+        &none  &kp TILDE  &none        &none      &kp LEFT_PARENTHESIS  &none      &none  &kp RIGHT_PARENTHESIS  &kp PLUS  &kp QMARK  & kp PIPE          &none
+        &none  &kp GRAVE  &kp EQUAL   &kp COLON   &kp LEFT_BRACE        &kp LT     &kp GT &kp RIGHT_BRACE        &kp MINUS &kp UNDER  &kp DOUBLE_QUOTES  &none
+        &none  &kp TAB    &none       &kp SEMI    &kp LEFT_BRACKET      &none      &none  &kp RIGHT_BRACKET      &trans    &trans     &tran              &none
         &force_sl1   &cl2  &ss_cw &sk LCTRL  &to DEF    &cl3
         >;
     };
@@ -163,15 +173,15 @@ cl3: cl3 {
     nav {
       // -----------------------------------------------------------------------------------------
       // | NONE |     |     |fword| redo|     ||||| yank| undo | to0 | del |paste| NONE |
-      // | NONE |     |     | cut |     |     ||||| left| down | up  |right|     | NONE |
+      // | NONE |     |     | cut |     |     ||||| left| down | up  |right|enter| NONE |
       // | NONE | TAB | del |     |     |bword|||||     | back | forward |     | BSPC| NONE |
       //                    | num | sym |SHFT ||||| CTRL | to0 | NAV |
 
       bindings = <
         &none   &none    &none    &kp LA(RIGHT_ARROW) &kp LG(LS(Z))  &none               &kp LG(C)       &kp LG(Z)             &to DEF                &kp DEL          &kp LG(V)  &none
-        &none   &none    &none    &kp LG(X)           &none          &none               &kp LEFT_ARROW  &kp DOWN_ARROW        &kp UP_ARROW           &kp RIGHT_ARROW  &none      &none
+        &none   &none    &none    &kp LG(X)           &none          &none               &kp LEFT_ARROW  &kp DOWN_ARROW        &kp UP_ARROW           &kp RIGHT_ARROW  &kp ENTER  &none
         &none   &kp TAB  &kp DEL  &none               &none          &kp LA(LEFT_ARROW)  &none           &kp LG(LEFT_BRACKET)  &kp LG(RIGHT_BRACKET)  &none            &trans     &none
-        &cl1    &cl2  &ss_cw &sk LCTRL  &to DEF    &cl3
+        &force_sl1    &force_sl2  &ss_cw &sk LCTRL  &to DEF    &cl3
         >;
     };
 
