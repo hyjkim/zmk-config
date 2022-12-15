@@ -181,7 +181,7 @@ cl3: cl3 {
         &none   &none    &none    &kp LA(RIGHT_ARROW) &kp LG(LS(Z))  &none               &kp LG(C)       &kp LG(Z)             &to DEF                &kp DEL          &kp LG(V)  &none
         &none   &none    &none    &kp LG(X)           &none          &none               &kp LEFT_ARROW  &kp DOWN_ARROW        &kp UP_ARROW           &kp RIGHT_ARROW  &kp ENTER  &none
         &none   &kp TAB  &kp DEL  &none               &none          &kp LA(LEFT_ARROW)  &none           &kp LG(LEFT_BRACKET)  &kp LG(RIGHT_BRACKET)  &none            &trans     &none
-        &force_sl1    &force_sl2  &ss_cw &sk LCTRL  &to DEF    &cl3
+        &force_sl1    &cl2  &ss_cw &sk LCTRL  &to DEF    &cl3
         >;
     };
 
@@ -224,13 +224,13 @@ cl3: cl3 {
     combo_ret_2 {
       key-positions = <32 33>;
       bindings = <&kp RET>;
-      timeout-ms = <30>;
+      timeout-ms = <35>;
     };
 
     combo_tab {
       key-positions = <25 26>;
       bindings = <&kp TAB>;
-      timeout-ms = <30>;
+      timeout-ms = <35>;
     };
 
     combo_tab_2 {
@@ -273,6 +273,20 @@ cl3: cl3 {
     right_alt_cmd {
       bindings = <&kp RG(RIGHT_ALT)>;
       key-positions = <19 20 21>;
+      timeout-ms = <30>;
+    };
+    
+    // Navigation helpers
+    start_of_line {
+      bindings = <&kp DLLR>;
+      key-positions = <4 16>;
+      layers = <NAV>;
+      timeout-ms = <30>;
+    };
+    end_of_line {
+      bindings = <&kp CARET>;
+      key-positions = <6 18>;
+      layers = <NAV>;
       timeout-ms = <30>;
     };
 
