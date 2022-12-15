@@ -278,7 +278,7 @@ cl3: cl3 {
     
     // Navigation helpers
     start_of_line {
-      bindings = <&kp LG(LEFT_ARROW);
+      bindings = <&kp LG(LEFT_ARROW)>;
       key-positions = <4 16>;
       layers = <NAV>;
       timeout-ms = <30>;
@@ -290,7 +290,7 @@ cl3: cl3 {
       timeout-ms = <30>;
     };
 
-    // settings related combos
+    // settings related comb
     to_set {
       bindings = <&to SET>;
       key-positions = <2 3 4>;
