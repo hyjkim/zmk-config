@@ -278,13 +278,13 @@ cl3: cl3 {
     
     // Navigation helpers
     start_of_line {
-      bindings = <&kp DLLR>;
+      bindings = <&kp LG(LEFT_ARROWr>;
       key-positions = <4 16>;
       layers = <NAV>;
       timeout-ms = <30>;
     };
     end_of_line {
-      bindings = <&kp CARET>;
+      bindings = <&kp LG(RIGHT_ARROWr>;
       key-positions = <6 18>;
       layers = <NAV>;
       timeout-ms = <30>;
