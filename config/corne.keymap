@@ -27,7 +27,7 @@
   macros {
       // force_sticky resets to default layer so that higher layers don't take priority
       force_sl1: force_sticky {
-          label = "JK_force_sticky";
+          label = "JK_force_sticky_sl1";
           compatible = "zmk,behavior-macro";
           #binding-cells = <0>;
           wait-ms = <0>;
@@ -37,7 +37,7 @@
             ;
       };
       force_sl2: force_sticky {
-          label = "JK_force_sticky";
+          label = "JK_force_sticky_sl2";
           compatible = "zmk,behavior-macro";
           #binding-cells = <0>;
           wait-ms = <0>;
