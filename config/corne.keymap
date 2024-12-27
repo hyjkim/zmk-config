@@ -19,7 +19,6 @@
 &mt {
   flavor = "tap-preferred";
   tapping-term-ms = <300>; 
-  `
   quick-tap-ms = <125>;
   
 };
@@ -31,8 +30,8 @@
           label = "JK_force_sticky";
           compatible = "zmk,behavior-macro";
           #binding-cells = <0>;
-          wait-ms = <0>;`
-          bindings`
+          wait-ms = <0>;
+          bindings
             = <&to 0>
             , <&cl1>
             ;
