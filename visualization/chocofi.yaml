@@ -159,3 +159,6 @@ combos:
   k: \
 - p: [1, 2]
   k: '~'
+- p: [22, 34]
+  k: GLOBE
+  l: [default]

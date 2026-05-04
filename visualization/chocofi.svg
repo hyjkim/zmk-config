@@ -399,6 +399,10 @@ path.combo {
 <rect rx="6" ry="6" x="98" y="29" width="28" height="26" class="combo"/>
 <text x="112" y="42" class="combo tap">~</text>
 </g>
+<g class="combo combopos-22">
+<rect rx="6" ry="6" x="742" y="120" width="28" height="26" class="combo"/>
+<text x="756" y="133" class="combo tap">GLOBE</text>
+</g>
 </g>
 </g>
 <g transform="translate(30, 331)" class="layer-number">

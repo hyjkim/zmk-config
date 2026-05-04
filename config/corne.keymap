@@ -353,5 +353,13 @@ cl3: cl3 {
       key-positions = <1 2>;
       timeout-ms = <30>;
     };
+
+    // Typeless dictation: right-pinky squeeze (apostrophe + backspace) → Globe/Fn
+    typeless {
+      bindings = <&kp GLOBE>;
+      key-positions = <22 34>;
+      layers = <DEF>;
+      timeout-ms = <30>;
+    };
   };
 };
