@@ -18,11 +18,12 @@ jobs:
 
       - uses: astral-sh/setup-uv@v6
 
-      - name: Regenerate keymap YAML and SVG
+      - name: Regenerate keymap YAML and SVGs
         run: |
           uvx --from keymap-drawer keymap parse -z config/corne.keymap -c 6 -o visualization/chocofi.yaml
-          uv run --quiet visualization/reshape_to_5col.py < visualization/chocofi.yaml \
-            | uvx --from keymap-drawer keymap -c visualization/keymap-drawer.config.yaml draw - -o visualization/chocofi.svg
+          uv run --quiet visualization/reshape_to_5col.py < visualization/chocofi.yaml > /tmp/chocofi_5col.yaml
+          uvx --from keymap-drawer keymap -c visualization/keymap-drawer.config.yaml draw /tmp/chocofi_5col.yaml -o visualization/chocofi.svg
+          uvx --from keymap-drawer keymap -c visualization/keymap-drawer.config.yaml draw --keys-only /tmp/chocofi_5col.yaml -o visualization/chocofi-keys.svg
 
       - name: Commit if changed
         run: |
