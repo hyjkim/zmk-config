@@ -21,7 +21,7 @@ jobs:
       - name: Regenerate keymap YAML and SVG
         run: |
           uvx --from keymap-drawer keymap parse -z config/corne.keymap -c 6 -o visualization/chocofi.yaml
-          uvx --from keymap-drawer keymap draw visualization/chocofi.yaml -o visualization/chocofi.svg
+          uvx --from keymap-drawer keymap -c visualization/keymap-drawer.config.yaml draw visualization/chocofi.yaml -o visualization/chocofi.svg
 
       - name: Commit if changed
         run: |
