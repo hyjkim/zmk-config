@@ -1,3 +1,2 @@
 draw_config:
-  separate_combo_diagrams: true
-  combo_diagrams_scale: 2
+  separate_combo_diagrams: false
