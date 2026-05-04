@@ -63,8 +63,8 @@ ht: hold_tap {
       compatible = "zmk,behavior-hold-tap";
       label = "HOLD_TAP";
 #binding-cells = <2>;
-      tapping_term_ms = <200>;
-      quick_tap_ms = <150>;
+      tapping-term-ms = <200>;
+      quick-tap-ms = <150>;
       flavor = "tap-preferred";
       bindings = <&kp>, <&kp>;
     };
@@ -150,13 +150,14 @@ cl3: cl3 {
     nav {
       // -----------------------------------------------------------------------------------------
       // | NONE |     |     |fword| redo|     ||||| yank| undo | to0 | del |paste| NONE |
-      // | NONE |     |     | cut |     |     ||||| left| down | up  |right|enter| NONE |
+      // | NONE |     | scr | cut |     |     ||||| left| down | up  |right|enter| NONE |
       // | NONE | TAB | del |     |     |bword|||||     | back | forward |     | BSPC| NONE |
       //                    | num | sym |SHFT ||||| CTRL | to0 | NAV |
+      // scr: tap = region->clipboard (Cmd+Ctrl+Shift+4); hold = region->file (Cmd+Shift+4)
 
       bindings = <
         &none   &none    &none    &kp LA(RIGHT_ARROW) &kp LG(LS(Z))  &none               &kp LG(C)       &kp LG(Z)             &to DEF                &kp DEL          &kp LG(V)  &none
-        &none   &none    &none    &kp LG(X)           &none          &none               &kp LEFT_ARROW  &kp DOWN_ARROW        &kp UP_ARROW           &kp RIGHT_ARROW  &kp ENTER  &none
+        &none   &none    &ht LG(LS(N4)) LG(LC(LS(N4)))    &kp LG(X)           &none          &none               &kp LEFT_ARROW  &kp DOWN_ARROW        &kp UP_ARROW           &kp RIGHT_ARROW  &kp ENTER  &none
         &none   &kp TAB  &kp DEL  &none               &none          &kp LA(LEFT_ARROW)  &none           &kp LG(LEFT_BRACKET)  &kp LG(RIGHT_BRACKET)  &none            &trans     &none
         &force_sl1    &cl2  &kp LSHFT &sk LCTRL  &to DEF    &cl3
         >;
@@ -165,10 +166,11 @@ cl3: cl3 {
     settings {
         // enter nav layer from symbol layer by combo pressing 2+3+4
         // clear bt with combo 7+8+9
+        // soft-off sits below BT_SEL 0; tap on each half to power down
 
       bindings = <
-        &none   &none  &none  &none  &none  &none    &none      &bt BT_SEL 0    &bt BT_PRV    &bt BT_NXT    &none
-        &none   &none  &none  &none  &none  &none    &none    &none    &none    &none    &none    &none
+        &none   &none  &none  &none  &none  &none    &none      &bt BT_SEL 0    &bt BT_PRV    &bt BT_NXT    &none    &none
+        &none   &none  &none  &none  &none  &none    &none    &soft_off  &none    &none    &none    &none
         &none   &none  &none  &none  &none  &none    &none    &none    &none    &none    &none    &none
         &force_sl1   &cl2  &kp LSHFT &sk LCTRL  &to DEF    &cl3
         >;

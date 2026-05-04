@@ -1,126 +1,161 @@
-layout:
-    split: true
-    rows: 3
-    columns: 6
-    thumbs: 4
+layout: {zmk_keyboard: corne}
 layers:
-    DEF:
-        left:
-            - [null, Q, W, E, R, T]
-            - [null, A, S, D, F, G]
-            - [null, Z, X, C, V, B]
-        right:
-            - [Y, U, I, O, P, null]
-            - [H, J, K, L, "'", null]
-            - [N, M, ",", ., BSpace, null]
-        left_thumbs: &left_thumbs
-            - tap: NUM
-            - tap: SYM
-            - hold: Caps
-              tap: Shift
-            - tap: Gui
-        right_thumbs: &right_thumbs
-            - tap: ""
-            - tap: Ctrl
-            - hold: Gui
-              tap: Space
-            - tap: NAV
-        combos: &combos
-            - positions: [13, 25]
-              key: "Esc"
-            - positions: [32, 33]
-              key: "Enter"
-            - positions: [26, 27]
-              key: "Tab"
-            - positions: [15, 16]
-              key: "Gui"
-            - positions: [16, 14]
-              key: "Alt"
-            - positions: [19, 20]
-              key: "Gui"
-            - positions: [19, 21]
-              key: "Alt"
-            - positions: [1, 13]
-              key: "!"
-            - positions: [2, 14]
-              key: "@"
-            - positions: [3, 15]
-              key: "#"
-            - positions: [4, 16]
-              key: "$"
-            - positions: [5, 17]
-              key: "%"
-            - positions: [6, 18]
-              key: "^"
-            - positions: [7, 19]
-              key: "&"
-            - positions: [8, 20]
-              key: "*"
-            - positions: [9, 21]
-              key: "/"
-            - positions: [10, 22]
-              key: "\\"
-    NUM:
-        left:
-            - [null, "Vol-", "Vol+", "to WSpace", "switch WSpace", "*"]
-            - [null, null, "=", ":", null, "/"]
-            - [null, "Tab", "Play Pause", "Next", ".", "="]
-        right:
-            - ["+", {hold: F7, tap: 7}, {hold: F8, tap: 8}, {hold: F9, tap: 9}, "Tmux", null]
-            - ["-",   {hold: F4, tap: 4}, {hold: F5, tap: 5}, {hold: F6, tap: 6}, "Enter", null]
-            - [".",   {hold: F1, tap: 1}, {hold: F2, tap: 2}, {hold: F3, tap: 3}, null, null]
-        left_thumbs:
-            - tap: NUM
-              type: held
-            - tap: SYM
-            - hold: Caps
-              tap: Shift
-            - tap: Gui
-        right_thumbs:
-            - tap: ""
-            - hold: Ctrl
-              tap: 0
-            - tap: DEF
-            - tap: NAV
-    SYM:
-        left:
-            - [null, "~", ":", null, "(", null]
-            - [null, "`", "\"", "=", "{", "<"]
-            - [null, "Tab", null, null, "[", null]
-        right:
-            - [null, ")", "+", "?", "|", null]
-            - [">", "}", "-", "_", ";", null]
-            - [null, "]", null, null, BSpace, null]
-        left_thumbs:
-            - tap: NUM
-            - tap: SYM
-              type: held
-            - hold: Caps
-              tap: Shift
-            - tap: Gui
-        right_thumbs:
-            - tap: ""
-            - tap: Ctrl
-            - tap: DEF
-            - tap: NAV
-    NAV:
-        left:
-            - [null, null, null, "Next word", "Redo", null]
-            - [null, null, null, "Cut", null, null]
-            - [null, "Tab", "Del", null, null, "Prev word"]
-        right:
-            - ["Copy", "Undo", "DEF", "Del", "Paste", null]
-            - ["Left", "Down", "Up", "Right", null, null]
-            - [null, "Gui+[", "Gui+]", null, null, null]
-        left_thumbs:
-            - tap: NUM
-            - tap: SYM
-            - hold: Caps
-              tap: Shift
-            - tap: Gui
-        right_thumbs:
-            - tap: ""
-            - tap: Ctrl
-            - tap: DEF
-            - tap: NAV
-              type: held
+  default:
+  - ['', Q, W, E, R, T]
+  - [Y, U, I, O, P, '']
+  - ['', A, S, D, F, G]
+  - [H, J, K, L, '''', '']
+  - ['', Z, X, C, V, B]
+  - [N, M, ',', ., BSPC, '']
+  - ['&cl1', '&cl2', LSHFT, LCTRL, SPACE, '&cl3']
+  number:
+  - ['', VOLUME DOWN, VOLUME UP, BRI DN, BRI UP, KP MULTIPLY]
+  - - {t: +, h: F12}
+    - {t: '7', h: F7}
+    - {t: '8', h: F8}
+    - {t: '9', h: F9}
+    - ''
+    - ''
+  - ['', '', '=', ':', '', KP DIVIDE]
+  - - {t: '-', h: F11}
+    - {t: '4', h: F4}
+    - {t: '5', h: F5}
+    - {t: '6', h: F6}
+    - ENTER
+    - ''
+  - ['', TAB, PLAY PAUSE, NEXT, ., KP EQUAL]
+  - - {t: ., h: F10}
+    - {t: '1', h: F1}
+    - {t: '2', h: F2}
+    - {t: '3', h: F3}
+    - {t: ▽, type: trans}
+    - ''
+  - - '&cl1'
+    - '&cl2'
+    - LSHFT
+    - {t: '0', h: LCTRL}
+    - {t: default, h: toggle}
+    - '&cl3'
+  symbol:
+  - ['', '~', '', '', (, '']
+  - ['', ), +, '?', '|', '']
+  - ['', '`', '=', ':', '{', <]
+  - ['>', '}', '-', _, '"', '']
+  - ['', TAB, '', ;, '[', '']
+  - - ''
+    - ']'
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - ''
+  - - '&force_sl1'
+    - '&cl2'
+    - LSHFT
+    - {t: LCTRL, h: sticky}
+    - {t: default, h: toggle}
+    - '&cl3'
+  nav:
+  - ['', '', '', Alt+RIGHT ARROW, Gui+Sft+Z, '']
+  - - Gui+C
+    - Gui+Z
+    - {t: default, h: toggle}
+    - DEL
+    - Gui+V
+    - ''
+  - - ''
+    - ''
+    - {t: Gui+Ctl+Sft+4, h: Gui+Sft+4}
+    - Gui+X
+    - ''
+    - ''
+  - [LEFT ARROW, DOWN ARROW, UP ARROW, RIGHT ARROW, ENTER, '']
+  - ['', TAB, DEL, '', '', Alt+LEFT ARROW]
+  - - ''
+    - Gui+[
+    - Gui+]
+    - ''
+    - {t: ▽, type: trans}
+    - ''
+  - - '&force_sl1'
+    - '&cl2'
+    - LSHFT
+    - {t: LCTRL, h: sticky}
+    - {t: default, h: toggle}
+    - '&cl3'
+  settings:
+  - ['', '', '', '', '', '']
+  - - ''
+    - {t: BT, h: '0'}
+    - BT PRV
+    - BT NXT
+    - ''
+    - ''
+  - ['', '', '', '', '', '']
+  - ['', '&soft_off', '', '', '', '']
+  - ['', '', '', '', '', '']
+  - ['', '', '', '', '', '']
+  - - '&force_sl1'
+    - '&cl2'
+    - LSHFT
+    - {t: LCTRL, h: sticky}
+    - {t: default, h: toggle}
+    - '&cl3'
+combos:
+- p: [13, 25]
+  k: ESC
+- p: [33, 34]
+  k: RET
+- p: [32, 33]
+  k: RET
+- p: [25, 26]
+  k: TAB
+- p: [26, 27]
+  k: TAB
+- p: [15, 16]
+  k: LEFT COMMAND
+- p: [16, 14]
+  k: LEFT ALT
+- p: [16, 15, 14]
+  k: Gui+LEFT ALT
+- p: [19, 20]
+  k: RIGHT COMMAND
+- p: [19, 21]
+  k: RIGHT ALT
+- p: [19, 20, 21]
+  k: Gui+RIGHT ALT
+- p: [4, 16]
+  k: Gui+RIGHT ARROW
+  l: [nav]
+- p: [6, 18]
+  k: Gui+LEFT ARROW
+  l: [nav]
+- p: [2, 3, 4]
+  k: {t: settings, h: toggle}
+  l: [nav]
+- p: [7, 8, 9]
+  k: BT CLR
+  l: [settings]
+- p: [1, 13]
+  k: '!'
+- p: [2, 14]
+  k: '@'
+- p: [3, 15]
+  k: '#'
+- p: [4, 16]
+  k: $
+  l: [default, number, symbol]
+- p: [5, 17]
+  k: '%'
+- p: [6, 18]
+  k: ^
+  l: [default, number, symbol]
+- p: [7, 19]
+  k: '&'
+- p: [8, 20]
+  k: KP MULTIPLY
+- p: [9, 21]
+  k: /
+- p: [10, 22]
+  k: \
+- p: [1, 2]
+  k: '~'

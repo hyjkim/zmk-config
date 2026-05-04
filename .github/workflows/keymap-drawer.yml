@@ -1,0 +1,34 @@
+name: Keymap visualization
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'config/corne.keymap'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  draw:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: astral-sh/setup-uv@v6
+
+      - name: Regenerate keymap YAML and SVG
+        run: |
+          uvx --from keymap-drawer keymap parse -z config/corne.keymap -c 6 -o visualization/chocofi.yaml
+          uvx --from keymap-drawer keymap draw visualization/chocofi.yaml -o visualization/chocofi.svg
+
+      - name: Commit if changed
+        run: |
+          if [[ -n "$(git status --porcelain visualization/)" ]]; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add visualization/
+            git commit -m "chore: regenerate keymap visualization [skip ci]"
+            git push
+          fi
