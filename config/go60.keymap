@@ -112,52 +112,57 @@
     compatible = "zmk,keymap";
 
     layer_Base {
+      // Chocofi-compatible 36-key footprint on the Go60.
+      // The Go60 number row, outer columns, and extra lower keys are unused.
       // C6..C1 | C1..C6
-      // Number row and the normal letter rows use the Go60's outer columns.
       bindings = <
-        &kp EQUAL  &kp N1  &kp N2  &kp N3  &kp N4  &kp N5    &kp N6  &kp N7  &kp N8  &kp N9  &kp N0  &kp MINUS
-        &kp TAB    &kp Q   &kp W   &kp E   &kp R   &kp T     &kp Y   &kp U   &kp I   &kp O   &kp P   &kp BSLH
-        &kp ESC    &kp A   &kp S   &kp D   &kp F   &kp G     &kp H   &kp J   &kp K   &kp L   &kp SEMI &kp SQT
-        &magic MAGIC 0 &kp Z &kp X &kp C &kp V &kp B              &kp N &kp M &kp COMMA &kp DOT &kp SLASH &kp BSPC
-        &kp GRAVE  &kp DEL &kp LALT                         &kp LGUI &kp LBKT &kp RBKT
-        &cl1       &cl2    &kp LSHFT                       &kp SPACE &kp LCTRL &cl3
+        &none       &none &none &none &none &none                     &none &none &none &none &none &none
+        &none       &kp Q &kp W &kp E &kp R &kp T                     &kp Y &kp U &kp I &kp O &kp P &none
+        &none       &kp A &kp S &kp D &kp F &kp G                     &kp H &kp J &kp K &kp L &kp SQT &none
+        &none       &kp Z &kp X &kp C &kp V &kp B                     &kp N &kp M &kp COMMA &kp DOT &kp BSPC &none
+        &none       &none &none                                      &none &none &none
+        &cl1        &cl2  &kp LSHFT                                  &kp LCTRL &kp SPACE &cl3
       >;
     };
 
     layer_Num {
-      // Chocofi-style number/media layer, expanded across the Go60 rows.
+      // Chocofi number/media layer on the same 36 active positions.
       bindings = <
-        &none  &kp C_VOLUME_DOWN &kp C_VOLUME_UP &kp C_BRI_DN &kp C_BRI_UP &kp KP_MULTIPLY    &ht F12 PLUS  &ht F7 NUMBER_7 &ht F8 NUMBER_8 &ht F9 NUMBER_9 &kp KP_DIVIDE &none
-        &none  &none             &kp EQUAL        &kp COLON    &none        &kp KP_DIVIDE      &ht F11 MINUS &ht F4 NUMBER_4 &ht F5 NUMBER_5 &ht F6 NUMBER_6 &kp ENTER    &none
-        &none  &kp TAB           &kp C_PLAY_PAUSE &kp C_NEXT   &kp PERIOD   &kp KP_EQUAL       &ht F10 PERIOD &ht F1 NUMBER_1 &ht F2 NUMBER_2 &ht F3 NUMBER_3 &trans       &none
-        &none  &none             &none            &none        &none        &none              &none         &none           &none           &none           &trans       &to DEF
-        &none  &none             &none                                                   &none         &none          &none
-        &cl1   &cl2              &kp LSHFT                                           &kp SPACE &mt LCTRL NUMBER_0 &cl3
+        &none       &none &none &none &none &none                     &none &none &none &none &none &none
+        &none       &kp C_VOLUME_DOWN &kp C_VOLUME_UP &kp C_BRI_DN &kp C_BRI_UP &kp KP_MULTIPLY
+                                                                        &ht F12 PLUS &ht F7 NUMBER_7 &ht F8 NUMBER_8 &ht F9 NUMBER_9 &none &none
+        &none       &none &kp EQUAL &kp COLON &none &kp KP_DIVIDE       &ht F11 MINUS &ht F4 NUMBER_4 &ht F5 NUMBER_5 &ht F6 NUMBER_6 &kp ENTER &none
+        &none       &kp TAB &kp C_PLAY_PAUSE &kp C_NEXT &kp PERIOD &kp KP_EQUAL
+                                                                        &ht F10 PERIOD &ht F1 NUMBER_1 &ht F2 NUMBER_2 &ht F3 NUMBER_3 &trans &none
+        &none       &none &none                                      &none &none &none
+        &cl1        &cl2  &kp LSHFT                                  &mt LCTRL NUMBER_0 &to DEF &cl3
       >;
     };
 
     layer_Sym {
-      // Symbols retain the Chocofi home-row chording, with common symbols
-      // also available directly on the Go60 number row.
+      // Chocofi symbol layer on the same 36 active positions.
       bindings = <
-        &kp TILDE &kp EXCL &kp AT &kp HASH &kp DLLR &kp PRCNT    &kp CARET &kp AMPS &kp KP_MULTIPLY &kp SLASH &kp BACKSLASH &kp PIPE
-        &none &kp GRAVE &kp EQUAL &kp COLON &kp LEFT_PARENTHESIS &kp LT    &kp GT &kp RIGHT_PARENTHESIS &kp PLUS &kp QMARK &kp PIPE &none
-        &none &kp TAB &none &kp SEMI &kp LEFT_BRACKET &none    &none &kp RIGHT_BRACKET &kp MINUS &kp UNDER &kp DOUBLE_QUOTES &none
-        &force_sl1 &kp LEFT_BRACE &kp RIGHT_BRACE &kp LEFT_PARENTHESIS &kp RIGHT_PARENTHESIS &kp LT    &kp GT &kp LEFT_BRACKET &kp RIGHT_BRACKET &kp PLUS &kp LSHFT &kp LCTRL
-        &kp CARET &trans &trans                                                     &trans &kp LC(LS(TAB)) &kp LC(TAB)
-        &force_sl1 &cl2 &kp LSHFT                                                  &kp SPACE &sk LCTRL &to DEF
+        &none       &none &none &none &none &none                     &none &none &none &none &none &none
+        &none       &kp TILDE &none &none &kp LEFT_PARENTHESIS &none    &none &kp RIGHT_PARENTHESIS &kp PLUS &kp QMARK &kp PIPE &none
+        &none       &kp GRAVE &kp EQUAL &kp COLON &kp LEFT_BRACE &kp LT  &kp GT &kp RIGHT_BRACE &kp MINUS &kp UNDER &kp DOUBLE_QUOTES &none
+        &none       &kp TAB &none &kp SEMI &kp LEFT_BRACKET &none       &none &kp RIGHT_BRACKET &trans &trans &trans &none
+        &none       &none &none                                      &none &none &none
+        &force_sl1  &cl2  &kp LSHFT                                  &sk LCTRL &to DEF &cl3
       >;
     };
 
     layer_Magic {
-      // Go60 hardware controls. Tap the MoErgo key on Base for status LEDs;
-      // hold it to reach this layer.
+      // Reserved Go60 hardware controls. The 36-key base intentionally leaves
+      // the physical MoErgo key unused, so this layer is not exposed by Base.
       bindings = <
-        &bt BT_CLR &kp C_BRI_DN &kp C_BRI_UP &kp C_PREV &kp C_NEXT &kp C_PLAY_PAUSE    &kp C_MUTE &kp C_VOLUME_DOWN &kp C_VOLUME_UP &none &none &bt BT_CLR_ALL
-        &bootloader &rgb_ug RGB_SPI &rgb_ug RGB_SAI &rgb_ug RGB_HUI &rgb_ug RGB_BRI &rgb_ug RGB_TOG    &none &none &none &none &none &bootloader
-        &sys_reset &rgb_ug RGB_SPD &rgb_ug RGB_SAD &rgb_ug RGB_HUD &rgb_ug RGB_BRD &rgb_ug RGB_EFF    &none &none &none &none &none &sys_reset
-        &none &none &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3    &none &none &none &none &none &to DEF
-        &out OUT_USB &none &none                         &none &none &none
+        &none &none &none &none &none &none                         &none &none &none &none &none &none
+        &bt BT_CLR &kp C_BRI_DN &kp C_BRI_UP &kp C_PREV &kp C_NEXT &kp C_PLAY_PAUSE
+                                                                        &kp C_MUTE &kp C_VOLUME_DOWN &kp C_VOLUME_UP &none &none &bt BT_CLR_ALL
+        &bootloader &rgb_ug RGB_SPI &rgb_ug RGB_SAI &rgb_ug RGB_HUI &rgb_ug RGB_BRI &rgb_ug RGB_TOG
+                                                                        &none &none &none &none &none &bootloader
+        &sys_reset &rgb_ug RGB_SPD &rgb_ug RGB_SAD &rgb_ug RGB_HUD &rgb_ug RGB_BRD &rgb_ug RGB_EFF
+                                                                        &none &none &none &none &none &sys_reset
+        &none &none &none                                      &none &none &none
         &none &none &none                            &none &none &none
       >;
     };
@@ -165,12 +170,12 @@
     layer_Nav {
       // Navigation and editing layer from the Chocofi configuration.
       bindings = <
+        &none &none &none &none &none &none                         &none &none &none &none &none &none
         &none &none &none &kp LA(RIGHT_ARROW) &kp LG(LS(Z)) &none    &kp LG(C) &kp LG(Z) &to DEF &kp DEL &kp LG(V) &none
         &none &none &ht LG(LS(N4)) LG(LC(LS(N4))) &kp LG(X) &none &none    &kp LEFT_ARROW &kp DOWN_ARROW &kp UP_ARROW &kp RIGHT_ARROW &kp ENTER &none
         &none &kp TAB &kp DEL &none &none &kp LA(LEFT_ARROW)    &none &kp LG(LEFT_BRACKET) &kp LG(RIGHT_BRACKET) &none &trans &none
-        &force_sl1 &kp HOME &kp END &kp PG_UP &kp PG_DN &kp INSERT    &kp LEFT_ARROW &kp DOWN_ARROW &kp UP_ARROW &kp RIGHT_ARROW &kp BSPC &force_sl1
-        &kp HOME &kp DEL &kp BSPC                                                     &kp LGUI &kp LC(LS(TAB)) &kp LC(TAB)
-        &force_sl1 &cl2 &kp LSHFT                                                  &kp SPACE &sk LCTRL &to DEF
+        &none &none &none                                      &none &none &none
+        &force_sl1 &cl2 &kp LSHFT                              &sk LCTRL &to DEF &cl3
       >;
     };
 
@@ -178,12 +183,12 @@
       // Bluetooth controls.  The three-key chords below mirror the Chocofi
       // setup layer while leaving the rest of this layer inert.
       bindings = <
+        &none &none &none &none &none &none    &none &none &none &none &none &none
         &none &none &none &none &none &none    &none &bt BT_SEL 0 &bt BT_PRV &bt BT_NXT &none &none
         &none &none &none &none &none &none    &none &none &none &none &none &none
         &none &none &none &none &none &none    &none &none &none &none &none &none
-        &none &none &none &none &none &none    &none &none &none &none &none &none
         &none &none &none                                                     &none &none &none
-        &force_sl1 &cl2 &kp LSHFT                                             &kp SPACE &sk LCTRL &to DEF
+        &force_sl1 &cl2 &kp LSHFT                                             &sk LCTRL &to DEF &cl3
       >;
     };
   };
@@ -198,7 +203,7 @@
     };
 
     combo_ret {
-      key-positions = <45 47>;
+      key-positions = <45 46>;
       bindings = <&kp RET>;
       timeout-ms = <30>;
     };
@@ -355,7 +360,7 @@
 
     typeless {
       bindings = <&kp GLOBE>;
-      key-positions = <35 47>;
+      key-positions = <34 46>;
       layers = <DEF>;
       timeout-ms = <30>;
     };
