@@ -66,13 +66,13 @@ layers:
     - ''
     - {t: Gui+Ctl+Sft+4, h: Gui+Sft+4}
     - Gui+X
-    - ''
-    - ''
+    - Gui+[
+    - Gui+]
   - [LEFT ARROW, DOWN ARROW, UP ARROW, RIGHT ARROW, ENTER, '']
   - ['', TAB, DEL, '', '', Alt+LEFT ARROW]
   - - Ctl+UP ARROW
-    - Gui+[
-    - Gui+]
+    - Ctl+LEFT ARROW
+    - Ctl+RIGHT ARROW
     - ''
     - {t: ▽, type: trans}
     - ''
