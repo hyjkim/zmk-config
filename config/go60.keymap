@@ -112,17 +112,19 @@
     compatible = "zmk,keymap";
 
     layer_Base {
-      // Hybrid Chocofi/Go60 layout: keep the number row, left Tab/Esc/MoErgo,
-      // and four active thumb controls. Both outermost thumb positions, the
-      // right outer finger column, and the extra lower keys remain unused.
+      // Chocofi thumb geometry uses T1, T2, and the adjacent R5C2 on each half.
+      // LH: R5C2=NUM, T1=SYM, T2=Shift. RH: T2=Ctrl, T1=Space, R5C2=NAV.
+      // Both T3 keys stay inactive. Keep the number row and left Tab/Esc/MoErgo.
       // C6..C1 | C1..C6
+      // Last two binding rows: LH R5C4,C3,C2 | RH R5C2,C3,C4;
+      //                       LH T1,T2,T3   | RH T3,T2,T1.
       bindings = <
         &kp EQUAL  &kp N1 &kp N2 &kp N3 &kp N4 &kp N5                 &kp N6 &kp N7 &kp N8 &kp N9 &kp N0 &kp MINUS
         &kp TAB    &kp Q  &kp W  &kp E  &kp R  &kp T                  &kp Y  &kp U  &kp I  &kp O  &kp P  &none
         &kp ESC    &kp A  &kp S  &kp D  &kp F  &kp G                  &kp H  &kp J  &kp K  &kp L  &kp SQT &none
         &magic MAGIC 0 &kp Z &kp X &kp C &kp V &kp B                  &kp N &kp M &kp COMMA &kp DOT &kp BSPC &none
-        &none      &none &none                                        &none &none &none
-        &none      &cl1 &cl2                                          &kp SPACE &cl3 &none
+        &none      &none &cl1                                         &cl3 &none &none
+        &cl2       &kp LSHFT &none                                    &none &kp LCTRL &kp SPACE
       >;
     };
 
@@ -136,20 +138,20 @@
         &trans      &none &kp EQUAL &kp COLON &none &kp KP_DIVIDE       &ht F11 MINUS &ht F4 NUMBER_4 &ht F5 NUMBER_5 &ht F6 NUMBER_6 &kp ENTER &none
         &trans      &kp TAB &kp C_PLAY_PAUSE &kp C_NEXT &kp PERIOD &kp KP_EQUAL
                                                                         &ht F10 PERIOD &ht F1 NUMBER_1 &ht F2 NUMBER_2 &ht F3 NUMBER_3 &trans &none
-        &none       &none &none                                      &none &none &none
-        &none       &cl1  &cl2                                        &mt LCTRL NUMBER_0 &to DEF &none
+        &none       &none &cl1                                       &cl3 &none &none
+        &cl2        &kp LSHFT &none                                  &none &mt LCTRL NUMBER_0 &to DEF
       >;
     };
 
     layer_Sym {
-      // Chocofi symbol layer on the same 36 active positions.
+      // Chocofi symbol layer on the same letter and thumb positions.
       bindings = <
         &none       &none &none &none &none &none                     &none &none &none &none &none &none
         &trans      &kp TILDE &none &none &kp LEFT_PARENTHESIS &none    &none &kp RIGHT_PARENTHESIS &kp PLUS &kp QMARK &kp PIPE &none
         &trans      &kp GRAVE &kp EQUAL &kp COLON &kp LEFT_BRACE &kp LT  &kp GT &kp RIGHT_BRACE &kp MINUS &kp UNDER &kp DOUBLE_QUOTES &none
         &trans      &kp TAB &none &kp SEMI &kp LEFT_BRACKET &none       &none &kp RIGHT_BRACKET &trans &trans &trans &none
-        &none       &none &none                                      &none &none &none
-        &none       &force_sl1  &cl2                                  &sk LCTRL &to DEF &none
+        &none       &none &force_sl1                                 &cl3 &none &none
+        &cl2        &kp LSHFT &none                                  &none &sk LCTRL &to DEF
       >;
     };
 
@@ -172,8 +174,8 @@
         &trans &none &none &kp LA(RIGHT_ARROW) &kp LG(LS(Z)) &none    &kp LG(C) &kp LG(Z) &to DEF &kp DEL &kp LG(V) &none
         &trans &none &ht LG(LS(N4)) LG(LC(LS(N4))) &kp LG(X) &none &none    &kp LEFT_ARROW &kp DOWN_ARROW &kp UP_ARROW &kp RIGHT_ARROW &kp ENTER &none
         &trans &kp TAB &kp DEL &none &none &kp LA(LEFT_ARROW)    &kp LC(UP_ARROW) &kp LG(LEFT_BRACKET) &kp LG(RIGHT_BRACKET) &none &trans &none
-        &none &none &none                                      &none &none &none
-        &none &force_sl1 &cl2                                  &sk LCTRL &to DEF &none
+        &none &none &force_sl1                                 &cl3 &none &none
+        &cl2 &kp LSHFT &none                                   &none &sk LCTRL &to DEF
       >;
     };
 
@@ -185,8 +187,8 @@
         &trans &none &none &none &none &none    &none &bt BT_SEL 0 &bt BT_PRV &bt BT_NXT &none &none
         &trans &none &none &none &none &none    &none &none &none &none &none &none
         &trans &none &none &none &none &none    &none &none &none &none &none &none
-        &none &none &none                                                     &none &none &none
-        &none &force_sl1 &cl2                                             &sk LCTRL &to DEF &none
+        &none &none &force_sl1                                 &cl3 &none &none
+        &cl2 &kp LSHFT &none                                   &none &sk LCTRL &to DEF
       >;
     };
   };

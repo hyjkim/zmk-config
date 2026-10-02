@@ -11,10 +11,22 @@
 `config/go60.keymap` is a Go60 port of the Chocofi layout with a compact hybrid
 footprint. It keeps the number row, the left outer `Tab`, `Esc`, and MoErgo
 keys, the right home-row apostrophe/right bottom-row Backspace positions, and
-four active thumb positions: `NUM`, `SYM`, `SPACE`, and `NAV`. Both outermost
-thumb positions, the right outer finger column, and the extra lower keys remain
-inert. It keeps the QWERTY, NUM, SYM, NAV, and SET layers, Mac modifiers, and
-the Chocofi combos translated to Go60 key positions.
+six Chocofi thumb functions. Each hand uses the two nearer angled keys (T1/T2)
+and the straight R5C2 key immediately beside T1. This preserves the physical
+Chocofi grouping:
+
+| Go60 position | Left hand | Right hand |
+| --- | --- | --- |
+| R5C2 (straight key beside T1, under V/M) | NUM | NAV |
+| T1 (nearest B/N; default right Enter) | SYM | Space |
+| T2 | Shift | Ctrl |
+| T3 (farthest angled key) | Inactive | Inactive |
+
+The remaining straight lower keys and right outer finger column are inactive
+on Base. The QWERTY, NUM, SYM, NAV, and SET layers, Mac modifiers, and Chocofi
+combos are retained. On NUM, right T2 taps `0` and holds Ctrl; on SYM/NAV/SET
+it is sticky Ctrl. Right T1 returns to Base on all four of those layers.
+NUM, SYM, Shift, and NAV remain on their corresponding physical positions.
 
 The physical MoErgo key taps status indicators and holds the Magic layer with
 RGB, Bluetooth, USB, media, and reset controls. `NAV + N` sends Ctrl+Up for
