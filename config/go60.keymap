@@ -114,7 +114,8 @@
     layer_Base {
       // Chocofi thumb geometry uses T1, T2, and the adjacent R5C2 on each half.
       // LH: R5C2=NUM, T1=SYM, T2=Shift. RH: T2=Ctrl, T1=Space, R5C2=NAV.
-      // Both T3 keys stay inactive. Keep the number row and left Tab/Esc/MoErgo.
+      // RH T3 (left of Ctrl) is left-click on every layer; LH T3 stays inactive.
+      // Keep the number row and left Tab/Esc/MoErgo.
       // C6..C1 | C1..C6
       // Last two binding rows: LH R5C4,C3,C2 | RH R5C2,C3,C4;
       //                       LH T1,T2,T3   | RH T3,T2,T1.
@@ -124,7 +125,7 @@
         &kp ESC    &kp A  &kp S  &kp D  &kp F  &kp G                  &kp H  &kp J  &kp K  &kp L  &kp SQT &none
         &magic MAGIC 0 &kp Z &kp X &kp C &kp V &kp B                  &kp N &kp M &kp COMMA &kp DOT &kp BSPC &none
         &none      &none &cl1                                         &cl3 &none &none
-        &cl2       &kp LSHFT &none                                    &none &kp LCTRL &kp SPACE
+        &cl2       &kp LSHFT &none                                    &mkp LCLK &kp LCTRL &kp SPACE
       >;
     };
 
@@ -139,7 +140,7 @@
         &trans      &kp TAB &kp C_PLAY_PAUSE &kp C_NEXT &kp PERIOD &kp KP_EQUAL
                                                                         &ht F10 PERIOD &ht F1 NUMBER_1 &ht F2 NUMBER_2 &ht F3 NUMBER_3 &trans &none
         &none       &none &cl1                                       &cl3 &none &none
-        &cl2        &kp LSHFT &none                                  &none &mt LCTRL NUMBER_0 &to DEF
+        &cl2        &kp LSHFT &none                                  &mkp LCLK &mt LCTRL NUMBER_0 &to DEF
       >;
     };
 
@@ -151,7 +152,7 @@
         &trans      &kp GRAVE &kp EQUAL &kp COLON &kp LEFT_BRACE &kp LT  &kp GT &kp RIGHT_BRACE &kp MINUS &kp UNDER &kp DOUBLE_QUOTES &none
         &trans      &kp TAB &none &kp SEMI &kp LEFT_BRACKET &none       &none &kp RIGHT_BRACKET &trans &trans &trans &none
         &none       &none &force_sl1                                 &cl3 &none &none
-        &cl2        &kp LSHFT &none                                  &none &sk LCTRL &to DEF
+        &cl2        &kp LSHFT &none                                  &mkp LCLK &sk LCTRL &to DEF
       >;
     };
 
@@ -163,7 +164,7 @@
         &sys_reset &rgb_ug RGB_SPD &rgb_ug RGB_SAD &rgb_ug RGB_HUD &rgb_ug RGB_BRD &rgb_ug RGB_EFF    &none &none &none &none &none &sys_reset
         &none &none &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3    &none &none &none &none &none &to DEF
         &out OUT_USB &none &none                                      &none &none &none
-        &none &none &none                                      &none &none &none
+        &none &none &none                                      &mkp LCLK &none &none
       >;
     };
 
@@ -176,7 +177,7 @@
         &trans &none &ht LG(LS(N4)) LG(LC(LS(N4))) &kp LG(X) &kp LG(LEFT_BRACKET) &kp LG(RIGHT_BRACKET)    &kp LEFT_ARROW &kp DOWN_ARROW &kp UP_ARROW &kp RIGHT_ARROW &kp ENTER &none
         &trans &kp TAB &kp DEL &none &none &kp LA(LEFT_ARROW)    &kp LC(UP_ARROW) &kp LC(LEFT_ARROW) &kp LC(RIGHT_ARROW) &none &trans &none
         &none &none &force_sl1                                 &cl3 &none &none
-        &cl2 &kp LSHFT &none                                   &none &sk LCTRL &to DEF
+        &cl2 &kp LSHFT &none                                   &mkp LCLK &sk LCTRL &to DEF
       >;
     };
 
@@ -189,7 +190,7 @@
         &trans &none &none &none &none &none    &none &none &none &none &none &none
         &trans &none &none &none &none &none    &none &none &none &none &none &none
         &none &none &force_sl1                                 &cl3 &none &none
-        &cl2 &kp LSHFT &none                                   &none &sk LCTRL &to DEF
+        &cl2 &kp LSHFT &none                                   &mkp LCLK &sk LCTRL &to DEF
       >;
     };
   };

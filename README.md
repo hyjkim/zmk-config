@@ -42,7 +42,11 @@ Chocofi grouping:
 | R5C2 (straight key beside T1, under V/M) | NUM | NAV |
 | T1 (nearest B/N; default right Enter) | SYM | Space |
 | T2 | Shift | Ctrl |
-| T3 (farthest angled key) | Inactive | Inactive |
+| T3 (farthest angled key) | Inactive | Left-click |
+
+Right T3 is the leftmost angled thumb key on the right half, immediately left
+of Ctrl. It sends left mouse button on every layer: tap to click, or hold while
+moving the right touchpad to drag. The other thumb mappings are unchanged.
 
 The remaining straight lower keys and right outer finger column are inactive
 on Base. The QWERTY, NUM, SYM, NAV, and SET layers, Mac modifiers, and Chocofi
