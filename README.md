@@ -17,6 +17,17 @@ Tap NAV once, then one of these keys; no separate Ctrl press is needed:
 | N | Mission Control (`Ctrl+Up`) |
 | F / G | Existing back/forward shortcuts (`Cmd+[` / `Cmd+]`), moved from M / , |
 
+## Typeless dictation (both keyboards)
+
+On Base, press apostrophe and Backspace together to send `F16`. In Typeless,
+add `F16` as an additional Dictate shortcut under Settings → Keyboard shortcuts;
+keep the existing `Fn` shortcut for the laptop keyboard. The combo has the same
+30 ms timing and key positions as before.
+
+This uses an ordinary keyboard keycode instead of ZMK's `GLOBE`, which does not
+fully emulate Apple Fn and is outside Go60's default basic consumer report range.
+No HID report-format change or Bluetooth re-pairing is needed for this change.
+
 ## Go60
 
 `config/go60.keymap` is a Go60 port of the Chocofi layout with a compact hybrid

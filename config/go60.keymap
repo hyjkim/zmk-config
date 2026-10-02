@@ -359,8 +359,9 @@
       timeout-ms = <30>;
     };
 
+    // Typeless dictation: apostrophe + backspace sends the app's additional F16 shortcut.
     typeless {
-      bindings = <&kp GLOBE>;
+      bindings = <&kp F16>;
       key-positions = <34 46>;
       layers = <DEF>;
       timeout-ms = <30>;
