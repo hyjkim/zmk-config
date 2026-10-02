@@ -6,6 +6,17 @@
 
 ![Layers with combos](visualization/chocofi.svg)
 
+## NAV shortcuts (both keyboards)
+
+Tap NAV once, then one of these keys; no separate Ctrl press is needed:
+
+| Key | Action |
+| --- | --- |
+| M | Previous desktop (`Ctrl+Left`) |
+| , | Next desktop (`Ctrl+Right`) |
+| N | Mission Control (`Ctrl+Up`) |
+| F / G | Existing back/forward shortcuts (`Cmd+[` / `Cmd+]`), moved from M / , |
+
 ## Go60
 
 `config/go60.keymap` is a Go60 port of the Chocofi layout with a compact hybrid

@@ -150,15 +150,15 @@ cl3: cl3 {
     nav {
       // -----------------------------------------------------------------------------------------
       // | NONE |     |     |fword| redo|     ||||| yank| undo | to0 | del |paste| NONE |
-      // | NONE |     | scr | cut |     |     ||||| left| down | up  |right|enter| NONE |
-      // | NONE | TAB | del |     |     |bword|||||     | back | forward |     | BSPC| NONE |
+      // | NONE |     | scr | cut | back| fwd ||||| left| down | up  |right|enter| NONE |
+      // | NONE | TAB | del |     |     |bword||||| MC  |desk< |desk> |     | BSPC| NONE |
       //                    | num | sym |SHFT ||||| CTRL | to0 | NAV |
       // scr: tap = region->clipboard (Cmd+Ctrl+Shift+4); hold = region->file (Cmd+Shift+4)
 
       bindings = <
         &none   &none    &none    &kp LA(RIGHT_ARROW) &kp LG(LS(Z))  &none               &kp LG(C)       &kp LG(Z)             &to DEF                &kp DEL          &kp LG(V)  &none
-        &none   &none    &ht LG(LS(N4)) LG(LC(LS(N4)))    &kp LG(X)           &none          &none               &kp LEFT_ARROW  &kp DOWN_ARROW        &kp UP_ARROW           &kp RIGHT_ARROW  &kp ENTER  &none
-        &none   &kp TAB  &kp DEL  &none               &none          &kp LA(LEFT_ARROW)  &kp LC(UP_ARROW) &kp LG(LEFT_BRACKET)  &kp LG(RIGHT_BRACKET)  &none            &trans     &none
+        &none   &none    &ht LG(LS(N4)) LG(LC(LS(N4)))    &kp LG(X)           &kp LG(LEFT_BRACKET) &kp LG(RIGHT_BRACKET) &kp LEFT_ARROW  &kp DOWN_ARROW        &kp UP_ARROW           &kp RIGHT_ARROW  &kp ENTER  &none
+        &none   &kp TAB  &kp DEL  &none               &none          &kp LA(LEFT_ARROW)  &kp LC(UP_ARROW) &kp LC(LEFT_ARROW)    &kp LC(RIGHT_ARROW)    &none            &trans     &none
         &force_sl1    &cl2  &kp LSHFT &sk LCTRL  &to DEF    &cl3
         >;
     };

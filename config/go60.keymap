@@ -169,11 +169,12 @@
 
     layer_Nav {
       // Navigation and editing layer from the Chocofi configuration.
+      // F/G keep Cmd+[/] navigation; M/comma switch desktops with Ctrl+Left/Right.
       bindings = <
         &none &none &none &none &none &none                         &none &none &none &none &none &none
         &trans &none &none &kp LA(RIGHT_ARROW) &kp LG(LS(Z)) &none    &kp LG(C) &kp LG(Z) &to DEF &kp DEL &kp LG(V) &none
-        &trans &none &ht LG(LS(N4)) LG(LC(LS(N4))) &kp LG(X) &none &none    &kp LEFT_ARROW &kp DOWN_ARROW &kp UP_ARROW &kp RIGHT_ARROW &kp ENTER &none
-        &trans &kp TAB &kp DEL &none &none &kp LA(LEFT_ARROW)    &kp LC(UP_ARROW) &kp LG(LEFT_BRACKET) &kp LG(RIGHT_BRACKET) &none &trans &none
+        &trans &none &ht LG(LS(N4)) LG(LC(LS(N4))) &kp LG(X) &kp LG(LEFT_BRACKET) &kp LG(RIGHT_BRACKET)    &kp LEFT_ARROW &kp DOWN_ARROW &kp UP_ARROW &kp RIGHT_ARROW &kp ENTER &none
+        &trans &kp TAB &kp DEL &none &none &kp LA(LEFT_ARROW)    &kp LC(UP_ARROW) &kp LC(LEFT_ARROW) &kp LC(RIGHT_ARROW) &none &trans &none
         &none &none &force_sl1                                 &cl3 &none &none
         &cl2 &kp LSHFT &none                                   &none &sk LCTRL &to DEF
       >;
