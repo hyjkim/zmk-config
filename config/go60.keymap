@@ -10,12 +10,19 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
+#include <dt-bindings/zmk/outputs.h>
+#include <dt-bindings/zmk/rgb.h>
+#include <dt-bindings/zmk/input_transform.h>
+#include <dt-bindings/zmk/pointing.h>
+#include <input/processors.dtsi>
+#include <zephyr/dt-bindings/input/input-event-codes.h>
 
 #define DEF 0
 #define NUM 1
 #define SYM 2
-#define NAV 3
-#define SET 4
+#define MAGIC 3
+#define NAV 4
+#define SET 5
 
 &mt {
   flavor = "tap-preferred";
@@ -24,7 +31,22 @@
 };
 
 / {
+  input_processors {
+    zip_click_to_right_click_mapper: zip_click_to_right_click_mapper {
+      compatible = "zmk,input-processor-code-mapper";
+      #input-processor-cells = <0>;
+      type = <INPUT_EV_KEY>;
+      map = <INPUT_BTN_0 INPUT_BTN_1>;
+    };
+  };
+
   macros {
+    rgb_ug_status_macro: rgb_ug_status_macro {
+      compatible = "zmk,behavior-macro";
+      #binding-cells = <0>;
+      bindings = <&rgb_ug RGB_STATUS>;
+    };
+
     force_sl1: force_sticky_sl1 {
       label = "JK_force_sticky_sl1";
       compatible = "zmk,behavior-macro";
@@ -43,6 +65,14 @@
   };
 
   behaviors {
+    magic: magic {
+      compatible = "zmk,behavior-hold-tap";
+      #binding-cells = <2>;
+      flavor = "tap-preferred";
+      tapping-term-ms = <200>;
+      bindings = <&mo>, <&rgb_ug_status_macro>;
+    };
+
     cl1: cl1 {
       compatible = "zmk,behavior-tap-dance";
       label = "TD_LAYER_1";
@@ -64,7 +94,7 @@
       label = "TD_LAYER_3";
       #binding-cells = <0>;
       tapping-term-ms = <200>;
-      bindings = <&sl 3>, <&to 3>;
+      bindings = <&sl 4>, <&to 4>;
     };
 
     ht: hold_tap {
@@ -88,9 +118,9 @@
         &kp EQUAL  &kp N1  &kp N2  &kp N3  &kp N4  &kp N5    &kp N6  &kp N7  &kp N8  &kp N9  &kp N0  &kp MINUS
         &kp TAB    &kp Q   &kp W   &kp E   &kp R   &kp T     &kp Y   &kp U   &kp I   &kp O   &kp P   &kp BSLH
         &kp ESC    &kp A   &kp S   &kp D   &kp F   &kp G     &kp H   &kp J   &kp K   &kp L   &kp SEMI &kp SQT
-        &mo SET    &kp Z   &kp X   &kp C   &kp V   &kp B     &kp N   &kp M   &kp COMMA &kp DOT &kp SLASH &kp BSPC
+        &magic MAGIC 0 &kp Z &kp X &kp C &kp V &kp B              &kp N &kp M &kp COMMA &kp DOT &kp SLASH &kp BSPC
         &kp GRAVE  &kp DEL &kp LALT                         &kp LGUI &kp LBKT &kp RBKT
-        &cl1       &cl2    &kp LSHFT                       &kp LCTRL &kp SPACE &cl3
+        &cl1       &cl2    &kp LSHFT                       &kp LCTRL &cl3 &kp SPACE
       >;
     };
 
@@ -102,7 +132,7 @@
         &none  &kp TAB           &kp C_PLAY_PAUSE &kp C_NEXT   &kp PERIOD   &kp KP_EQUAL       &ht F10 PERIOD &ht F1 NUMBER_1 &ht F2 NUMBER_2 &ht F3 NUMBER_3 &trans       &none
         &none  &none             &none            &none        &none        &none              &none         &none           &none           &none           &trans       &none
         &none  &none             &none                                                   &none         &none          &none
-        &cl1   &cl2              &kp LSHFT                                           &mt LCTRL NUMBER_0 &to DEF &cl3
+        &cl1   &cl2              &kp LSHFT                                           &mt LCTRL NUMBER_0 &cl3 &kp SPACE
       >;
     };
 
@@ -115,7 +145,20 @@
         &none &kp TAB &none &kp SEMI &kp LEFT_BRACKET &none    &none &kp RIGHT_BRACKET &kp MINUS &kp UNDER &kp DOUBLE_QUOTES &none
         &force_sl1 &kp LEFT_BRACE &kp RIGHT_BRACE &kp LEFT_PARENTHESIS &kp RIGHT_PARENTHESIS &kp LT    &kp GT &kp LEFT_BRACKET &kp RIGHT_BRACKET &kp PLUS &kp LSHFT &kp LCTRL
         &kp CARET &trans &trans                                                     &trans &kp LC(LS(TAB)) &kp LC(TAB)
-        &force_sl1 &cl2 &kp LSHFT                                                  &sk LCTRL &to DEF &cl3
+        &force_sl1 &cl2 &kp LSHFT                                                  &sk LCTRL &to DEF &kp SPACE
+      >;
+    };
+
+    layer_Magic {
+      // Go60 hardware controls. Tap the MoErgo key on Base for status LEDs;
+      // hold it to reach this layer.
+      bindings = <
+        &bt BT_CLR &kp C_BRI_DN &kp C_BRI_UP &kp C_PREV &kp C_NEXT &kp C_PLAY_PAUSE    &kp C_MUTE &kp C_VOLUME_DOWN &kp C_VOLUME_UP &none &none &bt BT_CLR_ALL
+        &bootloader &rgb_ug RGB_SPI &rgb_ug RGB_SAI &rgb_ug RGB_HUI &rgb_ug RGB_BRI &rgb_ug RGB_TOG    &none &none &none &none &none &bootloader
+        &sys_reset &rgb_ug RGB_SPD &rgb_ug RGB_SAD &rgb_ug RGB_HUD &rgb_ug RGB_BRD &rgb_ug RGB_EFF    &none &none &none &none &none &sys_reset
+        &none &none &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3    &none &none &none &none &none &to DEF
+        &out OUT_USB &none &none                         &none &none &none
+        &none &none &none                            &none &none &none
       >;
     };
 
@@ -127,7 +170,7 @@
         &none &kp TAB &kp DEL &none &none &kp LA(LEFT_ARROW)    &none &kp LG(LEFT_BRACKET) &kp LG(RIGHT_BRACKET) &none &trans &none
         &force_sl1 &kp HOME &kp END &kp PG_UP &kp PG_DN &kp INSERT    &kp LEFT_ARROW &kp DOWN_ARROW &kp UP_ARROW &kp RIGHT_ARROW &kp BSPC &force_sl1
         &kp HOME &kp DEL &kp BSPC                                                     &kp LGUI &kp LC(LS(TAB)) &kp LC(TAB)
-        &force_sl1 &cl2 &kp LSHFT                                                  &sk LCTRL &to DEF &cl3
+        &force_sl1 &cl2 &kp LSHFT                                                  &sk LCTRL &to DEF &kp SPACE
       >;
     };
 
@@ -140,7 +183,7 @@
         &none &none &none &none &none &none    &none &none &none &none &none &none
         &none &none &none &none &none &none    &none &none &none &none &none &none
         &none &none &none                                                     &none &none &none
-        &force_sl1 &cl2 &kp LSHFT                                             &sk LCTRL &to DEF &cl3
+        &force_sl1 &cl2 &kp LSHFT                                             &sk LCTRL &to DEF &kp SPACE
       >;
     };
   };
@@ -316,5 +359,25 @@
       layers = <DEF>;
       timeout-ms = <30>;
     };
+  };
+};
+
+// Go60 touchpads: the right pad is a mouse, while the left pad scrolls and
+// uses its click as right-click.  The Symbol layer increases right-pad speed.
+&cirque_rh_listener {
+  input-processors = <&zip_xy_scaler 3 1>;
+
+  layer_2 {
+    layers = <SYM>;
+    input-processors = <&zip_xy_scaler 9 1>;
+  };
+};
+
+&cirque_lh_listener {
+  input-processors = <&zip_xy_to_scroll_mapper>, <&zip_xy_scaler 1 8>, <&zip_click_to_right_click_mapper>;
+
+  layer_4 {
+    layers = <SET>;
+    input-processors = <&zip_xy_scaler 3 1>;
   };
 };
