@@ -379,10 +379,25 @@
 };
 
 &cirque_lh_listener {
-  input-processors = <&zip_xy_to_scroll_mapper>, <&zip_scroll_transform INPUT_TRANSFORM_Y_INVERT>, <&zip_xy_scaler 1 8>, <&zip_click_to_right_click_mapper>;
+  // Map motion to wheel events before scaling them. An XY scaler here would
+  // ignore the mapped events, leaving scrolling at full speed.
+  input-processors = <&zip_xy_to_scroll_mapper>,
+                     <&zip_scroll_transform INPUT_TRANSFORM_Y_INVERT>,
+                     <&zip_scroll_scaler 1 16>,
+                     <&zip_click_to_right_click_mapper>;
 
   layer_4 {
     layers = <SET>;
     input-processors = <&zip_xy_scaler 3 1>;
+  };
+
+  nav_scroll {
+    layers = <NAV>;
+    // Layer overrides replace the whole chain: retain natural scrolling and
+    // right-click while scrolling twice as fast as the normal setting.
+    input-processors = <&zip_xy_to_scroll_mapper>,
+                       <&zip_scroll_transform INPUT_TRANSFORM_Y_INVERT>,
+                       <&zip_scroll_scaler 1 8>,
+                       <&zip_click_to_right_click_mapper>;
   };
 };

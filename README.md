@@ -31,7 +31,10 @@ NUM, SYM, Shift, and NAV remain on their corresponding physical positions.
 The physical MoErgo key taps status indicators and holds the Magic layer with
 RGB, Bluetooth, USB, media, and reset controls. `NAV + N` sends Ctrl+Up for
 macOS Exposé/Mission Control. The integrated right touchpad remains mouse
-input; the left touchpad scrolls and its click acts as right-click.
+input; the left touchpad scrolls and its click acts as right-click. Normal
+scrolling uses a gentle 1/16 scale; with NAV active it uses 1/8 (twice as fast).
+Both horizontal and vertical scrolling are scaled, and vertical scrolling
+keeps the Mac-style natural direction. SET retains its left-pad mouse mode.
 
 The Go60 workflow builds the left and right halves into one `go60.uf2`
 artifact using the official MoErgo ZMK distribution. Push the repository and
